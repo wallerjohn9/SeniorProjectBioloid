@@ -5,41 +5,60 @@ Created on Jan 21, 2018
 '''
 import pypot.robot
 from time import sleep
+import itertools
+import numpy
 from pypot.primitive.move import MoveRecorder, Move, MovePlayer
 
 class Bot:
-    
 
-    
-   
+
+
+
 
 
     def __init__(self):
-        
-    
-        self.robot = pypot.robot.from_config(bot_config)
-        
+
+        self.robot = pypot.robot.from_config(bot_config, True, False)
+        #self.robot.start_sync()
+        #print(robot.motors)
+        #self.robot.compliant = False
+        #self.robot.goto_position({'left_hand': -90, 'right_hand': 90}, 1, 'minjerk', True)
+        #sleep(5)
+        #self.robot.goto_position({'left_hand': 90, 'right_hand': -90}, 1, 'dummy', False)
+        #self.robot.close()
+        '''for m in self.robot.arms:
+            #m.compliant = False
+            m.goal_position = 90
+            sleep(.02) '''
+        #sleep(2)
+        #self.robot.stop_sync()
+        #self.robot.close()
+        """self.robot.compliant= False
+        self.robot.goto_position({'left_hand': 90, 'right_hand': -90}, .25, None, False)
+        sleep(10)
+        self.robot.close()"""
+
         """move_recorder = MoveRecorder(self.robot, 50, self.robot.arms)
         self.robot.compliant = True;
         print("start")
         move_recorder.start()
         sleep(5)
         move_recorder.stop()
-        
+
         with open('fuck.move','w') as f:
             move_recorder.move.save(f)
             print('saved')
-        
+
         sleep(2)
-        
+
         with open('fuck.move') as f:
             mov = Move.load(f)
-        
+
         self.robot.compliant = False;
-        
+
         move_player = MovePlayer(self.robot, mov)
         move_player.start()
-        
+
         sleep(5)
     """
         '''
@@ -47,14 +66,14 @@ class Bot:
             #print(m.present_position)
             m.compliant = False
             m.goal_position = 0.0
-            
+
             print(m.id)
             print(m.goal_position)
             print(m.present_position)
             #time.sleep(1)
-            
+
             #print('shitklfsd')
-            
+
         for m in self.robot.legs:
             m.compliant = False
             m.goal_position = 0.0
@@ -85,7 +104,7 @@ class Bot:
             self.robot.left_ab.goal_position = 10.0
             self.robot.right_ab.goal_position = 10.0
             time.sleep(.25)
-            
+
         for i in range(10,0):
             self.robot.left_ab.compliant = False
             self.robot.right_ab.compliant = False
@@ -108,16 +127,16 @@ class Bot:
             self.robot.right_ab.goal_position = 10.0
             time.sleep(.25)
         self.robot.close()
-        
+
     def move(self,motors,positions):
         pass
         motors is an array of motors for desired movement.
            positions is an array of desired angles to be matched with each motor.
-        
+
         posIndex = 0
-        
+
         if len(motors) != len(positions):
-            raise Exception('Need a position angle for each motor')  
+            raise Exception('Need a position angle for each motor')
         for m in motors:
             #print("moving motor " + m + " to " +positions[posIndex]+ " degrees.")
             if m == 'left_hand':
@@ -134,10 +153,10 @@ class Bot:
                 print(self.robot.right_hand.goal_position)
                 print(self.robot.right_hand.present_position)
                 sleep(.1)
-                
+
             posIndex+=1
         sleep(.25)
-        self.robot.close()   
+        self.robot.close()
         '''
     def moveBot(self,frameList):
         #lastFrame = 0
@@ -153,8 +172,9 @@ class Bot:
             print('Motor speed: {}'.format(motorSpeed) )
             print(frame)
             #print('Wait time: {}'.format(timeToWait))
-            for motor in self.robot.motors:
-                motor.goal_speed = motorSpeed
+            #for motor in self.robot.motors:
+                #pypot.dynamixel.io.set_moving_speed(motor, motorSpeed)
+
             self.robot.right_titty.goal_position = frame[2]
             #sleep(.01)
             self.robot.left_titty.goal_position = frame[3]
@@ -190,22 +210,22 @@ class Bot:
             self.robot.right_foot.goal_position = frame[18]
             #sleep(.01)
             self.robot.left_foot.goal_position = frame[19]
-            sleep(timeToWait)
-            
-            
+            sleep(2)
+
+
             #self.robot.__ge__(MOTOR_IDS[1]).goal_position = frame[1]
             #self.robot.self.MOTOR_IDS[1].goal_position = frame[1]
-            
-            
-                
-                
-                
-  
-        
+            self.robot.close()
+
+
+
+
+
+
 bot_config = {
         'controllers':{
             'my_dxl_controller': {
-                'port': '/dev/tty.usbmodem1421',
+                'port': '/dev/tty.usbmodem1411',
                 'sync_read': True,
                 'protocol' : 1,
                 'attached_motors': ['chest', 'legs', 'arms'],
@@ -220,9 +240,9 @@ bot_config = {
             'left_leg': ['left_hip','left_ass','left_knee','left_foot','left_ankle'],
             'right_leg': ['right_hip','right_ass','right_knee','right_foot','right_ankle']
         },
-    
+
         'motors': {
-        
+
             'left_hand': {
                 'id': 6,
                 'type': 'AX-12',
@@ -349,6 +369,5 @@ bot_config = {
                 'offset': 0.0,
                 'angle_limit': [-90.0,90.0]
             }
-        }       
-}        
-         
+        }
+}
