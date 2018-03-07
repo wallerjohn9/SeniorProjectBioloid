@@ -17,23 +17,49 @@ def main():
     print('Configuration complete...\n')
     print('Bioloid:\n')
     print(bioloid)
-    dance = primitives.DancePrimitive(bioloid)
+
+    # Primitives code block
+    idlePosition = primitives.StartPosPrimitive(bioloid)
+    redeem = primitives.Redeemer(bioloid)
+    dance = primitives.DancePrimitive1(bioloid)
+    bow = primitives.Bow(bioloid)
+
+
+    #idlePosition.start()
+    #idlePosition.wait_to_stop()
+
+    bioloid.compliant = False
+    idlePosition.start()
+    idlePosition.wait_to_stop()
+    time.sleep(3)
+    bow.start()
+    bow.wait_to_stop()
+    """
     print('dance start')
     dance.start()
     print('dance end')
 
     dance.wait_to_stop()
     print("Stopped")
-    #time.sleep(10)
+        #time.sleep(10)
+   i = 0
+   while(i < 3):
+        i += 1
+        idlePosition.start()
+        idlePosition.wait_to_stop()
+        time.sleep(2)
+        redeem.start()
+        redeem.wait_to_stop()
+        time.sleep(2)
 
-
-    #frameList1= []
-    #angleList1 = [0,-81.15, 80.86, -68.26, 67.97, -14.65, 14.36, -45.12, 45.12, -1.46, 1.17, -50.1, 49.8, -79.69, 79.39, 39.55, -39.84, -1.46, 1.17]
-    #frameList1.append(angleList1)
-    #bioloid.moveBot(movements.startPos())
-    #print('start position complete, preparing to bow')
-    #time.sleep(2)
-    #bioloid.moveBot(movements.bow())
+    idlePosition.stop()
+    dance.stop()
+    """
+    bioloid.compliant = True
+    bow.stop()
+    idlePosition.stop()
+    bioloid.stop_sync()
+    bioloid.close()
     print('Terminating sequence')
 
 
