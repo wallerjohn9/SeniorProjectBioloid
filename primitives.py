@@ -101,3 +101,52 @@ class Bravo(pypot.primitive.Primitive):
 		self.robot.goto_position(movements.Bravo2, movements.BravoTimes['2'], 'dummy', True)
 		self.robot.goto_position(movements.Bravo3, movements.BravoTimes['3'], 'dummy', True)
 		self.robot.goto_position(movements.Bravo4, movements.BravoTimes['4'], 'dummy', True)
+
+
+##################################
+###########pushUpStart#########
+###################################
+
+class pushUpStart(pypot.primitive.Primitive):
+	def __init__(self, robot):
+		self.robot = robot
+		pypot.primitive.Primitive.__init__(self, robot)
+
+	def run(self):
+		self.robot.goto_position(movements.pushUpStart0, movements.pushUpStartTimes['0'], 'dummy', True)
+		self.robot.goto_position(movements.pushUpStart1, movements.pushUpStartTimes['1'], 'dummy', True)
+		self.robot.goto_position(movements.pushUpStart2, movements.pushUpStartTimes['2'], 'dummy', True)
+		self.robot.goto_position(movements.pushUpStart3, movements.pushUpStartTimes['3'], 'dummy', True)
+		self.robot.goto_position(movements.pushUpStart4, movements.pushUpStartTimes['4'], 'dummy', True)
+		self.robot.goto_position(movements.pushUpStart5, movements.pushUpStartTimes['5'], 'dummy', True)
+
+##################################
+###########pushUpMiddle#########
+###################################
+
+class pushUpMiddle(pypot.primitive.Primitive):
+	def __init__(self, robot):
+		self.robot = robot
+		pypot.primitive.Primitive.__init__(self, robot)
+
+	def run(self):
+		self.robot.goto_position(movements.pushUpMiddle0, movements.pushUpMiddleTimes['0'], 'dummy', True)
+		self.robot.goto_position(movements.pushUpMiddle1, movements.pushUpMiddleTimes['1'], 'dummy', True)
+
+##################################
+###########pushUpEnd#########
+###################################
+
+class pushUpEnd(pypot.primitive.Primitive):
+	def __init__(self, robot):
+		self.robot = robot
+		pypot.primitive.Primitive.__init__(self, robot)
+
+	def run(self):
+		self.robot.goto_position(movements.pushUpEnd0, movements.pushUpEndTimes['0'], 'dummy', True)
+		self.robot.goto_position(movements.pushUpEnd1, movements.pushUpEndTimes['1'], 'dummy', True)
+		self.robot.goto_position(movements.pushUpEnd2, movements.pushUpEndTimes['2'], 'dummy', True)
+		self.robot.goto_position(movements.pushUpEnd3, movements.pushUpEndTimes['3'], 'dummy', True)
+		self.robot.goto_position(movements.pushUpEnd4, movements.pushUpEndTimes['4'], 'dummy', True)
+		self.robot.goto_position(movements.pushUpEnd5, movements.pushUpEndTimes['5'], 'dummy', True)
+		self.robot.goto_position(movements.pushUpEnd6, movements.pushUpEndTimes['6'], 'dummy', True)
