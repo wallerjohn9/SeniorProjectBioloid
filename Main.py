@@ -26,6 +26,7 @@ def main():
     pushUpStart = primitives.pushUpStart(bioloid)
     pushUpMiddle = primitives.pushUpMiddle(bioloid)
     pushUpEnd = primitives.pushUpEnd(bioloid)
+    getUpFront = primitives.getUpFront(bioloid)
 
 
     #idlePosition.start()
@@ -48,6 +49,10 @@ def main():
     pushUpMiddle.wait_to_stop()
     pushUpEnd.start()
     pushUpEnd.wait_to_stop()
+    time.sleep(3)
+    getUpFront.start()
+    getUpFront.wait_to_stop()
+    time.sleep(3)
     """
     print('dance start')
     dance.start()
