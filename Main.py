@@ -23,6 +23,9 @@ def main():
     redeem = primitives.Redeemer(bioloid)
     dance = primitives.DancePrimitive1(bioloid)
     bow = primitives.Bow(bioloid)
+    pushUpStart = primitives.pushUpStart(bioloid)
+    pushUpMiddle = primitives.pushUpMiddle(bioloid)
+    pushUpEnd = primitives.pushUpEnd(bioloid)
 
 
     #idlePosition.start()
