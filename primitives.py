@@ -77,10 +77,10 @@ class Bow(pypot.primitive.Primitive):
 
     def run(self):
 
-        self.robot.goto_position(movements.bow1, .3, 'dummy', True)
-        self.robot.goto_position(movements.bow2, .5, 'dummy', True)
-        self.robot.goto_position(movements.bow3, 1, 'dummy', True)
-        self.robot.goto_position(movements.bow4, .5, 'dummy', True)
-        self.robot.goto_position(movements.bow5, 1, 'dummy', True)
-        self.robot.goto_position(movements.bow6, .3, 'dummy', True)
-        self.robot.goto_position(movements.bow7, 1, 'dummy', True)
+        self.robot.goto_position(movements.bow0, .3, 'dummy', True)
+        self.robot.goto_position(movements.bow1, .5, 'dummy', True)
+        self.robot.goto_position(movements.bow2, 1, 'dummy', True)
+        self.robot.goto_position(movements.bow3, .5, 'dummy', True)
+        self.robot.goto_position(movements.bow4, 1, 'dummy', True)
+        self.robot.goto_position(movements.bow5, .3, 'dummy', True)
+        self.robot.goto_position(movements.bow6, 1, 'dummy', True)

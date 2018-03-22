@@ -78,6 +78,17 @@ startPosDictB = {
 # .976
 # .290
 
+
+
+bow0 = {"right_titty": -51.86, "left_titty": 51.56, "right_shoulder": -68.26, "left_shoulder": 67.97, "right_hand": -14.65, "left_hand": 14.36, "right_ab": -46.58, "left_ab": 46.29, "right_ass": -1.17, "left_ass": 0.88, "right_hip": -48.34, "left_hip": 48.05, "right_knee": -67.38, "left_knee": 67.09, "right_ankle": 30.76, "left_ankle": -31.05, "right_foot": -1.17, "left_foot": 0.88}
+bow1 = {"right_titty": -65.62, "left_titty": 65.33, "right_shoulder": -67.97, "left_shoulder": 67.68, "right_hand": -89.65, "left_hand": 89.36, "right_ab": -46.58, "left_ab": 46.29, "right_ass": -1.17, "left_ass": 0.88, "right_hip": -48.34, "left_hip": 48.05, "right_knee": -67.38, "left_knee": 67.09, "right_ankle": 30.76, "left_ankle": -31.05, "right_foot": -1.17, "left_foot": 0.88}
+bow2 = {"right_titty": -8.5, "left_titty": 8.2, "right_shoulder": -67.97, "left_shoulder": 67.68, "right_hand": -89.65, "left_hand": 89.36, "right_ab": -46.58, "left_ab": 46.29, "right_ass": -1.17, "left_ass": 0.88, "right_hip": -121.58, "left_hip": 121.29, "right_knee": -67.38, "left_knee": 67.09, "right_ankle": 10.25, "left_ankle": -10.55, "right_foot": -1.17, "left_foot": 0.88}
+bow3 = {"right_titty": -8.5, "left_titty": 8.2, "right_shoulder": -67.97, "left_shoulder": 67.68, "right_hand": -89.65, "left_hand": 89.36, "right_ab": -46.58, "left_ab": 46.29, "right_ass": -1.17, "left_ass": 0.88, "right_hip": -121.58, "left_hip": 121.29, "right_knee": -67.38, "left_knee": 67.09, "right_ankle": 10.25, "left_ankle": -10.55, "right_foot": -1.17, "left_foot": 0.88}
+bow4 = {"right_titty": -65.62, "left_titty": 65.33, "right_shoulder": -67.97, "left_shoulder": 67.68, "right_hand": -89.65, "left_hand": 89.36, "right_ab": -46.58, "left_ab": 46.29, "right_ass": -1.17, "left_ass": 0.88, "right_hip": -48.34, "left_hip": 48.05, "right_knee": -67.38, "left_knee": 67.09, "right_ankle": 30.76, "left_ankle": -31.05, "right_foot": -1.17, "left_foot": 0.88}
+bow5 = {"right_titty": -51.86, "left_titty": 51.56, "right_shoulder": -68.26, "left_shoulder": 67.97, "right_hand": -14.65, "left_hand": 14.36, "right_ab": -46.58, "left_ab": 46.29, "right_ass": -1.17, "left_ass": 0.88, "right_hip": -48.34, "left_hip": 48.05, "right_knee": -67.38, "left_knee": 67.09, "right_ankle": 30.76, "left_ankle": -31.05, "right_foot": -1.17, "left_foot": 0.88}
+bow6 = {"right_titty": -81.15, "left_titty": 80.86, "right_shoulder": -68.26, "left_shoulder": 67.97, "right_hand": -14.65, "left_hand": 14.36, "right_ab": -45.12, "left_ab": 45.12, "right_ass": -1.46, "left_ass": 1.17, "right_hip": -50.1, "left_hip": 49.8, "right_knee": -79.69, "left_knee": 79.39, "right_ankle": 39.55, "left_ankle": -39.84, "right_foot": -1.46, "left_foot": 1.17}
+
+"""
 bow1 = {
 'right_titty': -51.86,
 'left_titty': 51.56,
@@ -217,7 +228,7 @@ bow7 = {
 'left_ankle': -39.84,
 'right_foot': -1.46,
 'left_foot':1.17
-}
+} """
 ################################################################################
 ####BRAVO movements Generated with create Movements .py
 ##########

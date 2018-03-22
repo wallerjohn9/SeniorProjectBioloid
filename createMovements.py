@@ -4,7 +4,7 @@ with open("rawmovements.txt") as f:
 # you may also want to remove whitespace characters like `\n` at the end of each line
 i=0
 movements = {}
-moveName = 'bravo'
+moveName = 'bow'
 
 for x in content:
     frame ={}
