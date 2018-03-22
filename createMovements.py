@@ -6,6 +6,7 @@ i=0
 movements = {}
 moveName = 'bow'
 time = {}
+lastFrame = 0
 for x in content:
     frame ={}
     x = x.replace("<","")
@@ -36,7 +37,8 @@ for x in content:
         o.write("\n")
         o.write(moveName + "" + str(i) + " = ")
         json.dump(frame, o)
-    time[i] = float(angles[2])/128
+    time[i] = (lastFrame-float(angles[2]))/128
+    lastFrame = int(angles[2])
     i += 1
 with open("output.txt", 'a+') as o:
     o.write("\n")

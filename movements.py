@@ -77,7 +77,7 @@ startPosDictB = {
 # .484
 # .976
 # .290
-bowTimes = {"0": 0.2890625, "1": 0.7734375, "2": 1.75, "3": 2.234375, "4": 3.2109375, "5": 3.5, "6": 3.890625}
+bowTimes = {"0": -0.2890625, "1": -0.484375, "2": -0.9765625, "3": -0.484375, "4": -0.9765625, "5": -0.2890625, "6": -0.390625}
 
 bow0 = {"right_titty": -51.86, "left_titty": 51.56, "right_shoulder": -68.26, "left_shoulder": 67.97, "right_hand": -14.65, "left_hand": 14.36, "right_ab": -46.58, "left_ab": 46.29, "right_ass": -1.17, "left_ass": 0.88, "right_hip": -48.34, "left_hip": 48.05, "right_knee": -67.38, "left_knee": 67.09, "right_ankle": 30.76, "left_ankle": -31.05, "right_foot": -1.17, "left_foot": 0.88}
 bow1 = {"right_titty": -65.62, "left_titty": 65.33, "right_shoulder": -67.97, "left_shoulder": 67.68, "right_hand": -89.65, "left_hand": 89.36, "right_ab": -46.58, "left_ab": 46.29, "right_ass": -1.17, "left_ass": 0.88, "right_hip": -48.34, "left_hip": 48.05, "right_knee": -67.38, "left_knee": 67.09, "right_ankle": 30.76, "left_ankle": -31.05, "right_foot": -1.17, "left_foot": 0.88}
