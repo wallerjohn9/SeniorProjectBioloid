@@ -26,6 +26,10 @@ def main():
     pushUpStart = primitives.pushUpStart(bioloid)
     pushUpMiddle = primitives.pushUpMiddle(bioloid)
     pushUpEnd = primitives.pushUpEnd(bioloid)
+    getUpFront = primitives.getUpFront(bioloid)
+    handStand1 = primitives.handStand1(bioloid)
+    handStand2 = primitives.handStand2(bioloid)
+    handStand3 = primitives.handStand3(bioloid)
 
 
     #idlePosition.start()
@@ -38,6 +42,13 @@ def main():
     bow.start()
     bow.wait_to_stop()
     time.sleep(3)
+    handStand1.start();
+    handStand1.stop();
+    handStand2.start();
+    handStand2.stop();
+    handStand3.start();
+    handStand3.stop();
+    """
     pushUpStart.start()
     pushUpStart.wait_to_stop()
     pushUpMiddle.start()
@@ -48,6 +59,11 @@ def main():
     pushUpMiddle.wait_to_stop()
     pushUpEnd.start()
     pushUpEnd.wait_to_stop()
+    """
+    time.sleep(3)
+    getUpFront.start()
+    getUpFront.wait_to_stop()
+    time.sleep(3)
     """
     print('dance start')
     dance.start()
