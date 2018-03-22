@@ -226,7 +226,7 @@ class Bot:
 bot_config = {
         'controllers':{
             'my_dxl_controller': {
-                'port': '/dev/tty.usbmodem1411',
+                'port': '/dev/ttyACM0',
                 'sync_read': True,
                 'protocol' : 1,
                 'attached_motors': ['chest', 'legs', 'arms'],
