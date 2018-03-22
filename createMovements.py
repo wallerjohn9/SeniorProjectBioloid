@@ -37,7 +37,7 @@ for x in content:
         o.write("\n")
         o.write(moveName + "" + str(i) + " = ")
         json.dump(frame, o)
-    time[i] = (lastFrame-float(angles[2]))/128
+    time[i] = (float(angles[2])-lastFrame)/128
     lastFrame = int(angles[2])
     i += 1
 with open("output.txt", 'a+') as o:
