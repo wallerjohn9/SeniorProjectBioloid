@@ -109,8 +109,8 @@ class Bravo(pypot.primitive.Primitive):
 
 class pushUpStart(pypot.primitive.Primitive):
 	def __init__(self, robot):
-            self.robot = robot
-            pypot.primitive.Primitive.__init__(self, robot)
+        self.robot = robot
+        pypot.primitive.Primitive.__init__(self, robot)
 
 	def run(self):
 		self.robot.goto_position(movements.pushUpStart0, movements.pushUpStartTimes['0'], 'dummy', True)
@@ -126,12 +126,12 @@ class pushUpStart(pypot.primitive.Primitive):
 
 class pushUpMiddle(pypot.primitive.Primitive):
 	def __init__(self, robot):
-	    self.robot = robot
-            pypot.primitive.Primitive.__init__(self, robot)
+        self.robot = robot
+        pypot.primitive.Primitive.__init__(self, robot)
 
 	def run(self):
-		self.robot.goto_position(movements.pushUpMiddle0, movements.pushUpMiddleTimes['0'], 'dummy', True)
-		self.robot.goto_position(movements.pushUpMiddle1, movements.pushUpMiddleTimes['1'], 'dummy', True)
+        self.robot.goto_position(movements.pushUpMiddle0, movements.pushUpMiddleTimes['0'], 'dummy', True)
+        self.robot.goto_position(movements.pushUpMiddle1, movements.pushUpMiddleTimes['1'], 'dummy', True)
 
 ##################################
 ###########pushUpEnd#########
@@ -139,8 +139,8 @@ class pushUpMiddle(pypot.primitive.Primitive):
 
 class pushUpEnd(pypot.primitive.Primitive):
 	def __init__(self, robot):
-	    self.robot = robot
-            pypot.primitive.Primitive.__init__(self, robot)
+        self.robot = robot
+        pypot.primitive.Primitive.__init__(self, robot)
 
 	def run(self):
 		self.robot.goto_position(movements.pushUpEnd0, movements.pushUpEndTimes['0'], 'dummy', True)
