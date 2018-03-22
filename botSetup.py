@@ -2,6 +2,7 @@
 Created on Jan 21, 2018
 
 @author: codyblack
+            Brian McGinnis
 '''
 import pypot.robot
 from time import sleep
@@ -304,14 +305,14 @@ bot_config = {
                 'type': 'AX-12',
                 'orientation': 'direct',
                 'offset': 0.0,
-                'angle_limit': [-90.0,90.0]
+                'angle_limit': [-180.0,180.0]
                 },
             'right_hip': {
                 'id': 11,
                 'type': 'AX-12',
                 'orientation': 'direct',
                 'offset': 0.0,
-                'angle_limit': [-90.0,90.0]
+                'angle_limit': [-180.0,180.0]
                 },
             'left_ass': {
                 'id': 10,
