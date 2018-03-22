@@ -92,8 +92,8 @@ class Bow(pypot.primitive.Primitive):
 
 class Bravo(pypot.primitive.Primitive):
 	def __init__(self, robot):
-	    self.robot = robot
-		pypot.primitive.Primitive.__init__(self, robot)
+        self.robot = robot
+        pypot.primitive.Primitive.__init__(self, robot)
 
 	def run(self):
 		self.robot.goto_position(movements.Bravo0, movements.BravoTimes['0'], 'dummy', True)
@@ -109,7 +109,7 @@ class Bravo(pypot.primitive.Primitive):
 
 class pushUpStart(pypot.primitive.Primitive):
 	def __init__(self, robot):
-		self.robot = robot
+        self.robot = robot
 		pypot.primitive.Primitive.__init__(self, robot)
 
 	def run(self):
