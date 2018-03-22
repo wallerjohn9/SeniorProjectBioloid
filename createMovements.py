@@ -4,9 +4,20 @@ with open("rawmovements.txt") as f:
 # you may also want to remove whitespace characters like `\n` at the end of each line
 i=0
 movements = {}
-moveName = 'bow'
+moveName = 'Bravo'
 time = {}
 lastFrame = 0
+with open("primitives.py", 'a+') as c:
+    c.write("\n\n##################################")
+    c.write("\n###########"+ moveName + "#########")
+    c.write("\n###################################")
+
+    code = "\n\nclass "+ moveName + "(pypot.primitive.Primitive):\n\tdef __init__(self, robot):\n\t\tself.robot = robot\n\t\tpypot.primitive.Primitive.__init__(self, robot)\n\n\tdef run(self):"
+    c.write(code)
+with open("movements.py", 'a+') as o:
+    o.write("\n\n##################################")
+    o.write("\n###########"+ moveName + "#########")
+    o.write("\n###################################")
 for x in content:
     frame ={}
     x = x.replace("<","")
@@ -33,14 +44,16 @@ for x in content:
     frame['left_ankle'] = float(angles[19])
     frame['right_foot'] = float(angles[20])
     frame['left_foot'] = float(angles[21])
-    with open("output.txt", 'a+') as o:
+    with open("movements.py", 'a+') as o:
         o.write("\n")
         o.write(moveName + "" + str(i) + " = ")
         json.dump(frame, o)
     time[i] = (float(angles[2])-lastFrame)/128
     lastFrame = int(angles[2])
+    with open("primitives.py", 'a+') as c:
+        c.write("\n\t\tself.robot.goto_position(movements."+moveName+ str(i)+", movements."+moveName+"Times['"+ str(i) +"'], 'dummy', True)")
     i += 1
-with open("output.txt", 'a+') as o:
+with open("movements.py", 'a+') as o:
     o.write("\n")
     o.write(moveName + "Times" + " = ")
     json.dump(time, o)

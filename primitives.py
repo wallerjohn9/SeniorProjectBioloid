@@ -84,3 +84,20 @@ class Bow(pypot.primitive.Primitive):
         self.robot.goto_position(movements.bow4, movements.bowTimes['4'], 'dummy', True)
         self.robot.goto_position(movements.bow5, movements.bowTimes['5'], 'dummy', True)
         self.robot.goto_position(movements.bow6, movements.bowTimes['6'], 'dummy', True)
+
+
+##################################
+###########Bravo#########
+###################################
+
+class Bravo(pypot.primitive.Primitive):
+	def __init__(self, robot):
+	    self.robot = robot
+		pypot.primitive.Primitive.__init__(self, robot)
+
+	def run(self):
+		self.robot.goto_position(movements.Bravo0, movements.BravoTimes['0'], 'dummy', True)
+		self.robot.goto_position(movements.Bravo1, movements.BravoTimes['1'], 'dummy', True)
+		self.robot.goto_position(movements.Bravo2, movements.BravoTimes['2'], 'dummy', True)
+		self.robot.goto_position(movements.Bravo3, movements.BravoTimes['3'], 'dummy', True)
+		self.robot.goto_position(movements.Bravo4, movements.BravoTimes['4'], 'dummy', True)
