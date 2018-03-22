@@ -5,7 +5,7 @@ with open("rawmovements.txt") as f:
 i=0
 movements = {}
 moveName = 'bow'
-
+time = {}
 for x in content:
     frame ={}
     x = x.replace("<","")
@@ -36,6 +36,10 @@ for x in content:
         o.write("\n")
         o.write(moveName + "" + str(i) + " = ")
         json.dump(frame, o)
-    movements[i] = frame
+    time[i] = float(angles[2])/128
     i += 1
+with open("output.txt", 'a+') as o:
+    o.write("\n")
+    o.write(moveName + "Times" + " = ")
+    json.dump(time, o)
 print(movements)
