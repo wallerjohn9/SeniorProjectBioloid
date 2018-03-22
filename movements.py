@@ -40,7 +40,7 @@ redeemer = {
         'right_foot': 0,
         'left_foot': 0
         }
-################################################################################        
+################################################################################
 startPosDictA = {
         'right_titty': -81.15,
         'left_titty': 80.86,
@@ -219,6 +219,17 @@ bow7 = {
 'left_foot':1.17
 }
 ################################################################################
+####BRAVO movements Generated with create Movements .py
+##########
+
+
+bravo0 = {"right_titty": 84.38, "left_titty": -84.67, "right_shoulder": -40.72, "left_shoulder": 40.43, "right_hand": -13.77, "left_hand": 13.48, "right_ab": -46.58, "left_ab": 46.29, "right_ass": -1.17, "left_ass": 0.88, "right_hip": -4.39, "left_hip: 4.1, "right_knee": -67.38, "left_knee": 67.09, "right_ankle": 48.34, "left_ankle": -48.63, "right_foot": -1.17, "left_foot": 0.88}
+bravo1 = {"right_titty": 84.38, "left_titty": -84.67, "right_shoulder": -84.67, "left_shoulder": 84.38, "right_hand": -13.77, "left_hand": 13.48, "right_ab": -46.58, "left_ab": 46.29, "right_ass": -1.17, "left_ass": 0.88, "right_hip": -4.39, "left_hip": 4.1, "right_knee": -67.38, "left_knee": 67.09, "right_ankle": 48.34, "left_ankle": -48.63, "right_foot": -1.17, "left_foot": 0.88}
+bravo2 = {"right_titty": 84.38, "left_titty": -84.67, "right_shoulder": -40.72, "left_shoulder": 40.43, "right_hand": -13.77, "left_hand": 13.48, "right_ab": -46.58, "left_ab": 46.29, "right_ass": -1.17, "left_ass": 0.88, "right_hip": -4.39, "left_hip": 4.1, "right_knee": -67.38, "left_knee": 67.09, "right_ankle": 48.34, "left_ankle": -48.63, "right_foot": -1.17, "left_foot": 0.88}
+bravo3 = {"right_titty": 84.38, "left_titty": -84.67, "right_shoulder": -84.67, "left_shoulder": 84.38, "right_hand": -13.77, "left_hand": 13.48, "right_ab": -46.58, "left_ab": 46.29, "right_ass": -1.17, "left_ass": 0.88, "right_hip": -4.39, "left_hip": 4.1, "right_knee": -67.38, "left_knee": 67.09, "right_ankle": 48.34, "left_ankle": -48.63, "right_foot": -1.17, "left_foot": 0.88}
+bravo4 = {"right_titty": 84.38, "left_titty": -84.67, "right_shoulder": -40.72, "left_shoulder": 40.43, "right_hand": -13.77, "left_hand": 13.48, "right_ab": -46.58, "left_ab": 46.29, "right_ass": -1.17, "left_ass": 0.88, "right_hip": -4.39, "left_hip": 4.1, "right_knee": -67.38, "left_knee": 67.09, "right_ankle": 48.34, "left_ankle": -48.63, "right_foot": -1.17, "left_foot": 0.88}
+
+
 
 def startPos():
     frameList = []
