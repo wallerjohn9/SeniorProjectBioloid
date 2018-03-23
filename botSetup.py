@@ -249,14 +249,14 @@ bot_config = {
                 'type': 'AX-12',
                 'orientation': 'direct',
                 'offset': 0.0,
-                'angle_limit': [-90.0,90.0]
+                'angle_limit': [-180.0,180.0]
                 },
             'right_hand': {
                 'id': 5,
                 'type': 'AX-12',
                 'orientation': 'direct',
                 'offset': 0.0,
-                'angle_limit': [-90.0,90.0]
+                'angle_limit': [-180.0,180.0]
             },
             'left_shoulder': {
                 'id': 4,
@@ -333,28 +333,28 @@ bot_config = {
                 'type': 'AX-12',
                 'orientation': 'direct',
                 'offset': 0.0,
-                'angle_limit': [-90.0,90.0]
+                'angle_limit': [-180.0,180.0]
                 },
             'right_knee': {
                 'id': 13,
                 'type': 'AX-12',
                 'orientation': 'direct',
                 'offset': 0.0,
-                'angle_limit': [-90.0,90.0]
+                'angle_limit': [-180.0,180.0]
                 },
             'left_ankle': {
                 'id': 16,
                 'type': 'AX-12',
                 'orientation': 'direct',
                 'offset': 0.0,
-                'angle_limit': [-90.0,90.0]
+                'angle_limit': [-180.0,180.0]
                 },
             'right_ankle': {
                 'id': 15,
                 'type': 'AX-12',
                 'orientation': 'direct',
                 'offset': 0.0,
-                'angle_limit': [-90.0,90.0]
+                'angle_limit': [-180.0,180.0]
                 },
             'left_foot': {
                 'id': 18,
