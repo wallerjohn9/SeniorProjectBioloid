@@ -280,6 +280,7 @@ getUpFront1 = {"right_titty": -44.24, "left_titty": 43.95, "right_shoulder": -4.
 getUpFront2 = {"right_titty": 29.0, "left_titty": -29.3, "right_shoulder": 19.92, "left_shoulder": -20.21, "right_hand": -104.59, "left_hand": 104.3, "right_ab": -46.58, "left_ab": 46.29, "right_ass": -4.1, "left_ass": 3.81, "right_hip": -133.89, "left_hip": 133.59, "right_knee": -114.55, "left_knee": 114.26, "right_ankle": 94.63, "left_ankle": -94.92, "right_foot": -2.34, "left_foot": 2.05}
 getUpFront3 = {"right_titty": -34.57, "left_titty": 34.28, "right_shoulder": -72.66, "left_shoulder": 72.36, "right_hand": -16.99, "left_hand": 16.7, "right_ab": -46.29, "left_ab": 46.0, "right_ass": 0.0, "left_ass": -0.29, "right_hip": -126.56, "left_hip": 126.27, "right_knee": -138.87, "left_knee": 138.57, "right_ankle": 56.54, "left_ankle": -56.84, "right_foot": 0.0, "left_foot": -0.29}
 getUpFront4 = {"right_titty": -81.15, "left_titty": 80.86, "right_shoulder": -68.26, "left_shoulder": 67.97, "right_hand": -14.65, "left_hand": 14.36, "right_ab": -45.12, "left_ab": 45.12, "right_ass": -1.46, "left_ass": 1.17, "right_hip": -50.1, "left_hip": 49.8, "right_knee": -79.69, "left_knee": 79.39, "right_ankle": 39.55, "left_ankle": -39.84, "right_foot": -1.46, "left_foot": 1.17}
+<<<<<<< HEAD
 getUpFrontTimes = {"0": 0.1953125, "1": 0.1953125, "2": 0.9765625, "3": 0.9765625, "4": 1.953125}
 
 ##################################
@@ -311,3 +312,6 @@ handStand32 = {"right_titty": 29.0, "left_titty": -29.3, "right_shoulder": 19.92
 handStand33 = {"right_titty": -34.57, "left_titty": 34.28, "right_shoulder": -72.66, "left_shoulder": 72.36, "right_hand": -16.99, "left_hand": 16.7, "right_ab": -46.29, "left_ab": 46.0, "right_ass": 0.0, "left_ass": -0.29, "right_hip": -126.56, "left_hip": 126.27, "right_knee": -138.87, "left_knee": 138.57, "right_ankle": 56.54, "left_ankle": -56.84, "right_foot": 0.0, "left_foot": -0.29}
 handStand34 = {"right_titty": -81.15, "left_titty": 80.86, "right_shoulder": -68.26, "left_shoulder": 67.97, "right_hand": -14.65, "left_hand": 14.36, "right_ab": -45.12, "left_ab": 45.12, "right_ass": -1.46, "left_ass": 1.17, "right_hip": -50.1, "left_hip": 49.8, "right_knee": -79.69, "left_knee": 79.39, "right_ankle": 39.55, "left_ankle": -39.84, "right_foot": -1.46, "left_foot": 1.17}
 handStand3Times = {"0": 1.953125, "1": 1.953125, "2": 0.9765625, "3": 0.9765625, "4": 1.953125}
+=======
+getUpFrontTimes = {"0": 0.1953125, "1": 0.1953125, "2": 0.9765625, "3": 0.9765625, "4": 1.953125}
+>>>>>>> 2cff0cab9e6e336141bf20be103544af62b01740

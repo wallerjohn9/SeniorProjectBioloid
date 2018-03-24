@@ -4,7 +4,11 @@ with open("rawmovements.txt") as f:
 # you may also want to remove whitespace characters like `\n` at the end of each line
 i=0
 movements = {}
+<<<<<<< HEAD
 moveName = 'handStand3'
+=======
+moveName = 'getUpFront'
+>>>>>>> 2cff0cab9e6e336141bf20be103544af62b01740
 time = {}
 lastFrame = 0
 with open("primitives.py", 'a+') as c:

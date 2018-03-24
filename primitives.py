@@ -167,6 +167,7 @@ class getUpFront(pypot.primitive.Primitive):
 		self.robot.goto_position(movements.getUpFront2, movements.getUpFrontTimes['2'], 'dummy', True)
 		self.robot.goto_position(movements.getUpFront3, movements.getUpFrontTimes['3'], 'dummy', True)
 		self.robot.goto_position(movements.getUpFront4, movements.getUpFrontTimes['4'], 'dummy', True)
+<<<<<<< HEAD
 
 
 ##################################
@@ -216,3 +217,5 @@ class handStand3(pypot.primitive.Primitive):
 		self.robot.goto_position(movements.handStand32, movements.handStand3Times['2'], 'dummy', True)
 		self.robot.goto_position(movements.handStand33, movements.handStand3Times['3'], 'dummy', True)
 		self.robot.goto_position(movements.handStand34, movements.handStand3Times['4'], 'dummy', True)
+=======
+>>>>>>> 2cff0cab9e6e336141bf20be103544af62b01740

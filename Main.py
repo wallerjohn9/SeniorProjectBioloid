@@ -27,9 +27,12 @@ def main():
     pushUpMiddle = primitives.pushUpMiddle(bioloid)
     pushUpEnd = primitives.pushUpEnd(bioloid)
     getUpFront = primitives.getUpFront(bioloid)
+<<<<<<< HEAD
     handStand1 = primitives.handStand1(bioloid)
     handStand2 = primitives.handStand2(bioloid)
     handStand3 = primitives.handStand3(bioloid)
+=======
+>>>>>>> 2cff0cab9e6e336141bf20be103544af62b01740
 
 
     #idlePosition.start()
@@ -59,6 +62,10 @@ def main():
     pushUpMiddle.wait_to_stop()
     pushUpEnd.start()
     pushUpEnd.wait_to_stop()
+    time.sleep(3)
+    getUpFront.start()
+    getUpFront.wait_to_stop()
+    time.sleep(3)
     """
     time.sleep(3)
     getUpFront.start()
