@@ -38,10 +38,10 @@ def main():
     stt = streaming.StreamingSTT(
 
         # replace with speech to text credentials username
-        '1f900d96-d3fa-40f0-ab53-9a600f931796',
+        '030a85a9-4a06-4e21-806b-da2cf29549fb',
 
         # replace with speech to text credentials password
-        'GAyuVqI1EEMv')
+        'AP3aAaPi0TSq')
 
     tts = textToSpeech.TextToSpeech(
 
@@ -102,12 +102,12 @@ def main():
     print('dead') """
 
     tts.speak('Hello my name is ' + name + ' I am the CBU admissions bot')
-    
-    
-        
-                
-            
-    
+
+
+
+
+
+
     while True:
        # ledP.blue()
         phrase = stt.get_phrase()
@@ -189,7 +189,7 @@ def main():
             """
             #ledP.pink()
             tts.speak(response)
-  
+
 
 if __name__ == "__main__":
     main()
