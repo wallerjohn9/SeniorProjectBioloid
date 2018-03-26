@@ -19,10 +19,10 @@ Date: 6/23/17
 """
 
 import conversation
-import ledProcess
-import led
-import servoProcess
-import servo
+#import ledProcess
+#import led
+#import servoProcess
+#import servo
 import musicProcess
 import music
 import textToSpeech
@@ -65,15 +65,15 @@ def main():
     # replace with robot name
     name = 'Bonnie'
 
-    servo_obj = servo.Servo()
+    """ servo_obj = servo.Servo()
     servoP = servoProcess.ServoProcess(servo_obj)
     led_obj = led.Led()
     ledP = ledProcess.LedProcess(led_obj)
-
+    """
     music_obj = music.Music("/home/pi/tj-python/resources/music.wav")
     musicP = musicProcess.MusicProcess(music_obj)
 
-    time.sleep(.5)
+    """ time.sleep(.5)
     ledP.red()
     time.sleep(.5)
     ledP.green()
@@ -86,7 +86,7 @@ def main():
     # tts.speak("Hello, just a moment while I boot up")
     servoP.wave(3)
 
-    """l = led.Led()
+    l = led.Led()
     le = ledProcess.LedProcess(l)
     print('sleeping')
     time.sleep(3)
@@ -109,14 +109,14 @@ def main():
             
     
     while True:
-        ledP.blue()
+       # ledP.blue()
         phrase = stt.get_phrase()
-        ledP.orange()
+       # ledP.orange()
         if (name in phrase) or ('bunny'in phrase) or ('body' in phrase) or ('Bani' in phrase):
             response = convo.sendMessage(phrase)
-            ledP.green()
+        #    ledP.green()
             #response = response.upper()
-            if '~' in response:
+            """if '~' in response:
                 print('Command Found')
                 if '~RED' in response:
                     ledP.red()
@@ -186,7 +186,8 @@ def main():
                     response = response.replace('~ARMWAVE', '', 1)
                 if response == '':
                     response = 'akward silence'
-            ledP.pink()
+            """
+            #ledP.pink()
             tts.speak(response)
   
 
