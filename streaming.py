@@ -81,6 +81,8 @@ class StreamingSTT:
         if auto_threshold:
             self.auto_threshold()
 
+    logging.debug("The thing has been made")
+
     # Set the timeout
     def set_timeout(self, timeout):
         self.TIMEOUT = timeout
@@ -236,6 +238,8 @@ class StreamingSTT:
             "timestamps": True,
             "max_alternatives": 3
         }
+
+        logging.debug("I OPENED THJAT SHTI")
 
         # Send the dictionary through the socket.
         ws.send(json.dumps(data).encode('utf8'))

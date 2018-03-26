@@ -70,8 +70,8 @@ def main():
     led_obj = led.Led()
     ledP = ledProcess.LedProcess(led_obj)
     """
-    music_obj = music.Music("/home/pi/tj-python/resources/music.wav")
-    musicP = musicProcess.MusicProcess(music_obj)
+    #music_obj = music.Music("/home/pi/tj-python/resources/music.wav")
+    #musicP = musicProcess.MusicProcess(music_obj)
 
     """ time.sleep(.5)
     ledP.red()

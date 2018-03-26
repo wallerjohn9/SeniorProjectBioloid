@@ -1,0 +1,198 @@
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTPS connection (1): stream.watsonplatform.net
+DEBUG:requests.packages.urllib3.connectionpool:https://stream.watsonplatform.net:443 "POST /text-to-speech/api/v1/synthesize?voice=en-US_AllisonVoice&accept=audio%2Fwav HTTP/1.1" 200 None
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a57830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a57830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a57830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a57830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a57830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a57830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a57830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a57830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a57830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a57830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a57830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a57830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a57830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a57830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a57830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a57830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a57830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a57830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a57830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a57830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a57830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a57830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a57830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a57830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTPS connection (1): stream.watsonplatform.net
+DEBUG:requests.packages.urllib3.connectionpool:https://stream.watsonplatform.net:443 "POST /text-to-speech/api/v1/synthesize?voice=en-US_AllisonVoice&accept=audio%2Fwav HTTP/1.1" 200 None
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a09830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+DEBUG:requests.packages.urllib3.connectionpool:Starting new HTTPS connection (1): stream.watsonplatform.net
+DEBUG:requests.packages.urllib3.connectionpool:https://stream.watsonplatform.net:443 "POST /text-to-speech/api/v1/synthesize?voice=en-US_AllisonVoice&accept=audio%2Fwav HTTP/1.1" 200 None
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a0a830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a0a830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a0a830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a0a830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a0a830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a0a830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a0a830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a0a830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a0a830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a0a830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a0a830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a0a830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a0a830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a0a830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a0a830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a0a830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a0a830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a0a830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a0a830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
+ERROR:websocket:error from callback <bound method StreamingSTT.on_error of <streaming.StreamingSTT object at 0x76a0a830>>: on_error() takes 2 positional arguments but 3 were given
+DEBUG:root:Websocket closed.
