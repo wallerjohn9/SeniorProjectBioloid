@@ -42,6 +42,7 @@ def main():
     bow.start()
     bow.wait_to_stop()
     time.sleep(3)
+    """
     handStand1.start();
     handStand1.stop();
     handStand2.start();
@@ -60,10 +61,10 @@ def main():
     pushUpEnd.start()
     pushUpEnd.wait_to_stop()
     time.sleep(3)
+    """
     getUpFront.start()
     getUpFront.wait_to_stop()
     time.sleep(3)
-    """
     time.sleep(3)
     getUpFront.start()
     getUpFront.wait_to_stop()
