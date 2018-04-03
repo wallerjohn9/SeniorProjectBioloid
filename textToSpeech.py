@@ -115,10 +115,10 @@ class TextToSpeech:
 
         elif(message == "I didn't get your meaning."):
             self.play("saywhat2")
-        elif(os.path.isfile(self.fileLocation + self.fileName + ".wav")):
+        elif(os.path.isfile(self.fileLocation + message + ".wav")):
             self.play(message)
         else: #not a saved response so it just does this
-            with open(join(dirname(__file__), (self.fileLocation + message), 'wb') as audio_file:
+            with open(join(dirname(__file__), self.fileLocation + message, 'wb') as audio_file:
                     audio_file.write(
                         self.text_to_speech.synthesize(
                             message,
