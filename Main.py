@@ -1,102 +1,155 @@
-'''
-Created on Jan 21, 2018
+#!/usr/bin/env python
 
-@author: codyblack
-'''
+"""
+
+                  888
+                  888
+                  888
+88888b.   .d88b.  88888b.   .d88b.  888  888
+888 "88b d88""88b 888 "88b d88""88b `Y8bd8P'
+888  888 888  888 888  888 888  888   X88K
+888  888 Y88..88P 888 d88P Y88..88P .d8""8b.     http://nobox.io
+888  888  "Y88P"  88888P"   "Y88P"  888  888     http://github.com/noboxio
+
+
+TJBot
+
+Author: Brian McGinnis
+Date: 6/23/17
+"""
+
+import conversation
+import ledProcess
+import led
+import textToSpeech
+import streaming
+import time
+import RPi.GPIO as GPIO
 import time
 import movements
-import pypot.robot
-import primitives
-import botSetup
+import bioloid
+
+
 
 def main():
-    print('Configuring bioloid...')
-    #bioloid = Bot()
-    bioloid = pypot.robot.from_config(botSetup.bot_config)
-    bioloid.start_sync()
-    print('Configuration complete...\n')
-    print('Bioloid:\n')
-    print(bioloid)
 
-    # Primitives code block
-    idlePosition = primitives.StartPosPrimitive(bioloid)
-    redeem = primitives.Redeemer(bioloid)
-    dance = primitives.DancePrimitive1(bioloid)
-    bow = primitives.Bow(bioloid)
-    pushUpStart = primitives.pushUpStart(bioloid)
-    pushUpMiddle = primitives.pushUpMiddle(bioloid)
-    pushUpEnd = primitives.pushUpEnd(bioloid)
-    getUpFront = primitives.getUpFront(bioloid)
-    handStand1 = primitives.handStand1(bioloid)
-    handStand2 = primitives.handStand2(bioloid)
-    handStand3 = primitives.handStand3(bioloid)
+    stt = streaming.StreamingSTT(
 
+        # replace with speech to text credentials username
+        '030a85a9-4a06-4e21-806b-da2cf29549fb',
 
-    #idlePosition.start()
-    #idlePosition.wait_to_stop()
+        # replace with speech to text credentials password
+        'AP3aAaPi0TSq')
 
-    bioloid.compliant = False
-    idlePosition.start()
-    idlePosition.wait_to_stop()
-    time.sleep(3)
-    bow.start()
-    bow.wait_to_stop()
-    time.sleep(3)
-    """
-    handStand1.start();
-    handStand1.stop();
-    handStand2.start();
-    handStand2.stop();
-    handStand3.start();
-    handStand3.stop();
-    """
-    pushUpStart.start()
-    pushUpStart.wait_to_stop()
-    pushUpMiddle.start()
-    pushUpMiddle.wait_to_stop()
-    pushUpMiddle.start()
-    pushUpMiddle.wait_to_stop()
-    pushUpMiddle.start()
-    pushUpMiddle.wait_to_stop()
-    pushUpEnd.start()
-    pushUpEnd.wait_to_stop()
-    time.sleep(3)
-    """
-    getUpFront.start()
-    getUpFront.wait_to_stop()
-    time.sleep(3)
-    time.sleep(3)
-    getUpFront.start()
-    getUpFront.wait_to_stop()
-    time.sleep(3)
-    """
-    print('dance start')
-    dance.start()
-    print('dance end')
+    tts = textToSpeech.TextToSpeech(
 
-    dance.wait_to_stop()
-    print("Stopped")
-        #time.sleep(10)
-   i = 0
-   while(i < 3):
-        i += 1
-        idlePosition.start()
-        idlePosition.wait_to_stop()
-        time.sleep(2)
-        redeem.start()
-        redeem.wait_to_stop()
-        time.sleep(2)
+        # replace with text to speech credentials username
+        '2cb70eda-ccc5-40d7-adee-91c9aa249841',
 
-    idlePosition.stop()
-    dance.stop()
-    """
-    bioloid.compliant = True
-    bow.stop()
-    idlePosition.stop()
-    bioloid.stop_sync()
-    bioloid.close()
-    print('Terminating sequence')
+        # replace with text to speech credentials password
+        'zyzBtEqo73D7')
+
+    convo = conversation.Conversation(
+
+        # replace with conversation credentials username
+        '154b5b29-d1ca-4ff2-be09-c33c5e1d9e20',
+
+        # replace with conversation credentials password
+        'pmNftYlpvMS8',
+
+        # replace with workspace ID.
+        'da21184b-ae02-4159-9727-d994fc1bbaaf')
+
+    biolid = biolid.Bioloid()
+
+    # replace with robot name
+    name = 'Bonnie'
+
+    bioloid.bow()
+    tts.speak('Hello my name is ' + name + ' I am the CBU admissions bot')
 
 
-if __name__ == '__main__':
+    while True:
+        phrase = stt.get_phrase()
+        if (name in phrase) or ('bunny'in phrase) or ('body' in phrase) or ('Bani' in phrase):
+            response = convo.sendMessage(phrase)
+            if '~' in response:
+                processCommand(response)
+
+            tts.speak(response)
+
+
+def processCommand(response):
+    '''
+    if '~RED' in response:
+        ledP.red()
+        response = response.replace('~RED', '', 1)
+    if '~ORANGE' in response:
+        ledP.orange()
+        response = response.replace('~ORANGE', '', 1)
+    if '~YELLOW' in response:
+        ledP.yellow()
+        response = response.replace('~YELLOW', '', 1)
+    if '~GREEN' in response:
+        ledP.green()
+        response = response.replace('~GREEN', '', 1)
+    if '~BLUE' in response:
+        print('Its Blue')
+        ledP.blue()
+        response = response.replace('~BLUE', '', 1)
+    if '~PURPLE' in response:
+        ledP.purple()
+        response = response.replace('~PURPLE', '', 1)
+    if '~PINK' in response:
+        ledP.pink()
+        response = response.replace('~PINK', '', 1)
+    if '~WHITE' in response:
+        ledP.white()
+        response = response.replace('~WHITE', '', 1)
+    if '~RAINBOW' in response:
+        ledP.rainbow()
+        response = response.replace('~RAINBOW', '', 1)
+    if '~RAINBOWCYCLE' in response:
+        ledP.rainbowCycle()
+        response = response.replace('~RAINBOWCYCLE', '', 1)
+    if '~MUSICPLAY' in response:
+        musicP.play()
+        response = response.replace('~MUSICPLAY', '', 1)
+    if '~MUSICSTOP' in response:
+        musicP.stop()
+        response = response.replace('~MUSICSTOP', '', 1)
+    if '~LEDOFF' in response:
+        ledP.off()
+        response = response.replace('~LEDOFF', '', 1)
+    if '~ARMSTOP' in response:
+        servoP.stop()
+        response = response.replace('~ARMSTOP', '', 1)
+    if '~ARMUP' in response:
+        servoP.armUp()
+        response = response.replace('~ARMUP', '', 1)
+    if '~ARMDOWN' in response:
+        servoP.armDown()
+        response = response.replace('~ARMDOWN', '', 1)
+    if '~DANCE' in response:
+        servoP.wave(10)
+        ledP.rainbowCycle(1, 50)
+        response = response.replace('~DANCE', '', 1)
+    if '~ARMANGLE' in response:
+        response = response.replace('~ARMANGLE', '', 1)
+        param = int(response.split("~", 1)[0])
+        response = response.split("~", 1)[1]
+        servoP.angle(param)
+    if '~ARMWAVECOUNT' in response:
+        response = response.replace('~ARMWAVECOUNTARMANGLE', '', 1)
+        param = int(response.split("~", 1)[0])
+        response = response.split("~", 1)[1]
+        servoP.wave(param)
+    if '~ARMWAVE' in response:
+        servoP.wave(2)
+        response = response.replace('~ARMWAVE', '', 1)
+    if response == '':
+        response = 'akward silence'
+    '''
+
+if __name__ == "__main__":
     main()
