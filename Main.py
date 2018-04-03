@@ -65,8 +65,8 @@ def main():
     # replace with robot name
     name = 'Bonnie'
 
-    bioloid.doBow()
-    tts.speak('Hello my name is ' + name + ' I am a total Bro')
+   # bioloid.doBow()
+    #tts.speak('Hello my name is ' + name + ' I am a total Bro')
 
 
     while True:

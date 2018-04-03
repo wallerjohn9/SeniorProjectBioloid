@@ -31,12 +31,12 @@ from websocket._abnf import ABNF
 class StreamingSTT:
 
     # Mic config.
-    CHUNK = 16384
+    CHUNK = 1024
     FORMAT = pyaudio.paInt16
     # It is necessary to keep CHANNELS at 1. Streaming STT does not handle the
     # extra data well and returns unwanted hums.
     CHANNELS = 1
-    RATE = 48000
+    RATE = 41000
 
     # large array of json data returned by watson.
     FINAL = []

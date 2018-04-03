@@ -116,13 +116,14 @@ class TextToSpeech:
         elif(message == "I didn't get your meaning."):
             self.play("saywhat2")
         else:
-            message = message.replace(" ", "_")
-            path = self.fileLocation + message + ".wav"
+            fileName = message.replace(" ", "_")
+            fileName = fileName.replace("'", "")
+            path = self.fileLocation + fileName + ".wav"
             if(os.path.isfile(path)):
                 print("Trigered")
                 self.play(message)
             else: #not a saved response so it just does this
-                tmp = (self.fileLocation + message + ".wav")
+                tmp = (self.fileLocation + fileName + ".wav")
                 print(tmp)
                 with open(join(dirname(__file__), tmp), 'wb') as audio_file:
                         audio_file.write(
@@ -130,7 +131,7 @@ class TextToSpeech:
                                 message,
                                 accept='audio/wav',
                                 voice="en-US_AllisonVoice"))
-                self.play(message)
+                self.play(fileName)
             #subprocess.call("exec aplay " + self.fileLocation, shell=True)
 
     def play(self, filename):
