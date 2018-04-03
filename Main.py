@@ -27,7 +27,7 @@ import time
 import RPi.GPIO as GPIO
 import time
 import movements
-import bioloid
+import bioloid as bio
 
 
 
@@ -60,12 +60,12 @@ def main():
         # replace with workspace ID.
         'da21184b-ae02-4159-9727-d994fc1bbaaf')
 
-    biolid = biolid.Bioloid()
+    bioloid = bio.Bioloid()
 
     # replace with robot name
     name = 'Bonnie'
 
-    bioloid.bow()
+    bioloid.doBow()
     tts.speak('Hello my name is ' + name + ' I am the CBU admissions bot')
 
 

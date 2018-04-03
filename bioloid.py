@@ -38,11 +38,11 @@ class Bioloid:
         self.idlePosition.start()
         self.idlePosition.wait_to_stop()
 
-    def bow():
+    def doBow(self):
         self.bow.start()
         self.bow.wait_to_stop()
         
-    def pushUp(count = 1):
+    def doPushUp(self, count = 1):
         self.pushUpStart.start()
         self.pushUpStart.wait_to_stop()
         while(count > 0):
@@ -52,5 +52,5 @@ class Bioloid:
         self.pushUpEnd.start()
         self.pushUpEnd.wait_to_stop()
 
-    def close():
+    def close(self):
         self.bioloid.close()
