@@ -1,4 +1,4 @@
-'''
+rear'''
 Created on Jan 21, 2018
 
 @author: codyblack
@@ -176,9 +176,9 @@ class Bot:
             #for motor in self.robot.motors:
                 #pypot.dynamixel.io.set_moving_speed(motor, motorSpeed)
 
-            self.robot.right_titty.goal_position = frame[2]
+            self.robot.right_chest.goal_position = frame[2]
             #sleep(.01)
-            self.robot.left_titty.goal_position = frame[3]
+            self.robot.left_chest.goal_position = frame[3]
             #sleep(.01)
             self.robot.right_shoulder.goal_position = frame[4]
             #sleep(.01)
@@ -194,7 +194,7 @@ class Bot:
             #sleep(.01)
             self.robot.right_ass.goal_position = frame[10]
             #sleep(.01)
-            self.robot.left_ass.goal_position = frame[11]
+            self.robot.left_rear.goal_position = frame[11]
             #sleep(.01)
             self.robot.right_hip.goal_position = frame[12]
             #sleep(.01)
@@ -234,12 +234,12 @@ bot_config = {
         },
         'motorgroups': {
             'arms': ['left_arm','right_arm'],
-            'chest': ['left_titty','right_titty','left_ab','right_ab'],
+            'chest': ['left_chest','right_chest','left_ab','right_ab'],
             'legs': ['left_leg','right_leg'],
             'left_arm': ['left_hand','left_shoulder'],
             'right_arm': ['right_hand','right_shoulder'],
-            'left_leg': ['left_hip','left_ass','left_knee','left_foot','left_ankle'],
-            'right_leg': ['right_hip','right_ass','right_knee','right_foot','right_ankle']
+            'left_leg': ['left_hip','left_rear','left_knee','left_foot','left_ankle'],
+            'right_leg': ['right_hip','right_rear','right_knee','right_foot','right_ankle']
         },
 
         'motors': {
@@ -272,14 +272,14 @@ bot_config = {
                 'offset': 0.0,
                 'angle_limit': [-90.0,90.0]
             },
-               'left_titty': {
+               'left_chest': {
                 'id': 2,
                 'type': 'AX-12',
                 'orientation': 'direct',
                 'offset': 0.0,
                 'angle_limit': [-90.0,90.0]
             },
-            'right_titty': {
+            'right_chest': {
                 'id': 1,
                 'type': 'AX-12',
                 'orientation': 'direct',
@@ -314,14 +314,14 @@ bot_config = {
                 'offset': 0.0,
                 'angle_limit': [-180.0,180.0]
                 },
-            'left_ass': {
+            'left_rear': {
                 'id': 10,
                 'type': 'AX-12',
                 'orientation': 'direct',
                 'offset': 0.0,
                 'angle_limit': [-90.0,90.0]
                 },
-            'right_ass': {
+            'right_rear': {
                 'id': 9,
                 'type': 'AX-12',
                 'orientation': 'direct',

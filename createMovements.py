@@ -4,7 +4,7 @@ with open("rawmovements.txt") as f:
 # you may also want to remove whitespace characters like `\n` at the end of each line
 i=0
 movements = {}
-moveName = 'oush'
+moveName = 'frontWalkEndR'
 time = {}
 lastFrame = 0
 with open("primitives.py", 'a+') as c:
@@ -34,8 +34,8 @@ for x in content:
     frame['left_hand'] = float(angles[9])
     frame['right_ab'] = float(angles[10])
     frame['left_ab'] = float(angles[11])
-    frame['right_ass'] = float(angles[12])
-    frame['left_ass'] = float(angles[13])
+    frame['right_rear'] = float(angles[12])
+    frame['left_rear'] = float(angles[13])
     frame['right_hip'] = float(angles[14])
     frame['left_hip'] = float(angles[15])
     frame['right_knee'] = float(angles[16])
