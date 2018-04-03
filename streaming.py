@@ -310,14 +310,14 @@ class StreamingSTT:
         self.WS.on_open = self.on_open
 
         # run the websocket
-        try:
-            self.WS.run_forever(
-                sslopt={
-                    "cert_reqs": ssl.CERT_NONE,
-                    "check_hostname": False,
-                    "ssl_version": ssl.PROTOCOL_TLSv1_2
-                }
-            )
+        self.WS.run_forever(
+            sslopt={
+                "cert_reqs": ssl.CERT_NONE,
+                "check_hostname": False,
+                "ssl_version": ssl.PROTOCOL_TLSv1_2
+            }
+        )
+
         # return the parsed result
         return "".join([i['results'][0]['alternatives'][0]
                         ['transcript'] for i in self.FINAL])
