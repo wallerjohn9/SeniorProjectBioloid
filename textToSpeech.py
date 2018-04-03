@@ -115,17 +115,22 @@ class TextToSpeech:
 
         elif(message == "I didn't get your meaning."):
             self.play("saywhat2")
-        elif(os.path.isfile(self.fileLocation + message + ".wav")):
-            self.play(message)
-        else: #not a saved response so it just does this
-            tmp = self.fileLocation+message+".wav"
-            with open(join(dirname(__file__), tmp), 'wb') as audio_file:
-                    audio_file.write(
-                        self.text_to_speech.synthesize(
-                            message,
-                            accept='audio/wav',
-                            voice="en-US_AllisonVoice"))
-            self.play(message)
+        else:
+            message = message.replace(" ", "_")
+            path = self.fileLocation + message + ".wav"
+            if(os.path.isfile(path)):
+                print("Trigered")
+                self.play(message)
+            else: #not a saved response so it just does this
+                tmp = (self.fileLocation + message + ".wav")
+                print(tmp)
+                with open(join(dirname(__file__), tmp), 'wb') as audio_file:
+                        audio_file.write(
+                            self.text_to_speech.synthesize(
+                                message,
+                                accept='audio/wav',
+                                voice="en-US_AllisonVoice"))
+                self.play(message)
             #subprocess.call("exec aplay " + self.fileLocation, shell=True)
 
     def play(self, filename):

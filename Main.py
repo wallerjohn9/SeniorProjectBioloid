@@ -66,7 +66,7 @@ def main():
     name = 'Bonnie'
 
     bioloid.doBow()
-    tts.speak('Hello my name is ' + name + ' I am the CBU admissions bot')
+    tts.speak('Hello my name is ' + name + ' I am a total Bro')
 
 
     while True:
