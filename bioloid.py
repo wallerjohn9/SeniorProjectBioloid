@@ -14,6 +14,8 @@ class Bioloid:
         print('Configuring bioloid...')
         self.bioloid = pypot.robot.from_config(botSetup.bot_config)
         self.bioloid.start_sync()
+        self.rightStep = True
+
         #print('Configuration complete...\n')
         #print('Bioloid:\n')
 
@@ -29,6 +31,14 @@ class Bioloid:
         self.handStand1 = primitives.handStand1(self.bioloid)
         self.handStand2 = primitives.handStand2(self.bioloid)
         self.handStand3 = primitives.handStand3(self.bioloid)
+        self.prepareWalk = primitives.prepareWalk(self.bioloid)
+        self.frontWalkStartL = primitives.frontWalkStartL(self.bioloid)
+        self.frontWalkStartR1 = primitives.frontWalkStartR1(self.bioloid)
+        self.frontWalkMiddleL1 = primitives.frontWalkMiddleL1(self.bioloid)
+        self.frontWalkMiddleR1 = primitives.frontWalkMiddleR1(self.bioloid)
+        self.frontWalkEndL1 = primitives.frontWalkEndL1(self.bioloid)
+        self.frontWalkEndR1 = primitives.frontWalkEndR1(self.bioloid)
+
 
 
         #idlePosition.start()
@@ -41,7 +51,7 @@ class Bioloid:
     def doBow(self):
         self.bow.start()
         self.bow.wait_to_stop()
-        
+
     def doPushUp(self, count = 1):
         self.pushUpStart.start()
         self.pushUpStart.wait_to_stop()
@@ -51,6 +61,35 @@ class Bioloid:
             count = count - 1
         self.pushUpEnd.start()
         self.pushUpEnd.wait_to_stop()
+
+    def doWalkFront(self, steps = 1):
+        if(self.rightStep):
+            self.frontWalkStartR1.start()
+            self.frontWalkStartR1.wait_to_stop()
+            self.rightStep = False
+        else:
+            self.frontWalkStartL.start()
+            self.frontWalkStartL.wait_to_stop()
+            self.rightStep = True
+        while(steps > 0):
+            if(self.rightStep):
+                self.frontWalkMiddleR1.start()
+                self.frontWalkMiddleR1.wait_to_stop()
+                self.rightStep = False
+            else:
+                self.frontWalkMiddleL1.start()
+                self.frontWalkMiddleL1.wait_to_stop()
+                self.rightStep = True
+        if(self.rightStep):
+            self.frontWalkEndR1.start()
+            self.frontWalkEndR1.wait_to_stop()
+            self.rightStep = False
+        else:
+            self.frontWalkEndL1.start()
+            self.frontWalkEndL1.wait_to_stop()
+            self.rightStep = True
+
+
 
     def close(self):
         self.bioloid.close()

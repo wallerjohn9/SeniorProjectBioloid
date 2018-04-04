@@ -263,6 +263,13 @@ class frontWalkStartL(pypot.primitive.Primitive):
 		self.robot.goto_position(movements.frontWalkStartL4, movements.frontWalkStartLTimes['4'], 'dummy', True)
 		self.robot.goto_position(movements.frontWalkStartL5, movements.frontWalkStartLTimes['5'], 'dummy', True)
 		self.robot.goto_position(movements.frontWalkStartL6, movements.frontWalkStartLTimes['6'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkStartL20, movements.frontWalkStartL2Times['0'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkStartL21, movements.frontWalkStartL2Times['1'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkStartL22, movements.frontWalkStartL2Times['2'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkStartL23, movements.frontWalkStartL2Times['3'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkStartL24, movements.frontWalkStartL2Times['4'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkStartL25, movements.frontWalkStartL2Times['5'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkStartL26, movements.frontWalkStartL2Times['6'], 'dummy', True)
 
 ##################################
 ###########frontWalkStartL2#########
@@ -299,6 +306,13 @@ class frontWalkStartR1(pypot.primitive.Primitive):
 		self.robot.goto_position(movements.frontWalkStartR14, movements.frontWalkStartR1Times['4'], 'dummy', True)
 		self.robot.goto_position(movements.frontWalkStartR15, movements.frontWalkStartR1Times['5'], 'dummy', True)
 		self.robot.goto_position(movements.frontWalkStartR16, movements.frontWalkStartR1Times['6'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkStartR20, movements.frontWalkStartR2Times['0'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkStartR21, movements.frontWalkStartR2Times['1'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkStartR22, movements.frontWalkStartR2Times['2'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkStartR23, movements.frontWalkStartR2Times['3'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkStartR24, movements.frontWalkStartR2Times['4'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkStartR25, movements.frontWalkStartR2Times['5'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkStartR26, movements.frontWalkStartR2Times['6'], 'dummy', True)
 
 ##################################
 ###########frontWalkStartR2#########
@@ -335,6 +349,14 @@ class frontWalkMiddleL1(pypot.primitive.Primitive):
 		self.robot.goto_position(movements.frontWalkMiddleL14, movements.frontWalkMiddleL1Times['4'], 'dummy', True)
 		self.robot.goto_position(movements.frontWalkMiddleL15, movements.frontWalkMiddleL1Times['5'], 'dummy', True)
 		self.robot.goto_position(movements.frontWalkMiddleL16, movements.frontWalkMiddleL1Times['6'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkMiddleL20, movements.frontWalkMiddleL2Times['0'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkMiddleL21, movements.frontWalkMiddleL2Times['1'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkMiddleL22, movements.frontWalkMiddleL2Times['2'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkMiddleL23, movements.frontWalkMiddleL2Times['3'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkMiddleL24, movements.frontWalkMiddleL2Times['4'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkMiddleL25, movements.frontWalkMiddleL2Times['5'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkMiddleL26, movements.frontWalkMiddleL2Times['6'], 'dummy', True)
+
 
 ##################################
 ###########frontWalkMiddleL2#########
@@ -371,6 +393,14 @@ class frontWalkMiddleR1(pypot.primitive.Primitive):
 		self.robot.goto_position(movements.frontWalkMiddleR14, movements.frontWalkMiddleR1Times['4'], 'dummy', True)
 		self.robot.goto_position(movements.frontWalkMiddleR15, movements.frontWalkMiddleR1Times['5'], 'dummy', True)
 		self.robot.goto_position(movements.frontWalkMiddleR16, movements.frontWalkMiddleR1Times['6'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkMiddleR20, movements.frontWalkMiddleR2Times['0'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkMiddleR21, movements.frontWalkMiddleR2Times['1'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkMiddleR22, movements.frontWalkMiddleR2Times['2'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkMiddleR23, movements.frontWalkMiddleR2Times['3'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkMiddleR24, movements.frontWalkMiddleR2Times['4'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkMiddleR25, movements.frontWalkMiddleR2Times['5'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkMiddleR26, movements.frontWalkMiddleR2Times['6'], 'dummy', True)
+
 
 ##################################
 ###########frontWalkMiddleR2#########
@@ -407,6 +437,13 @@ class frontWalkEndL1(pypot.primitive.Primitive):
 		self.robot.goto_position(movements.frontWalkEndL14, movements.frontWalkEndL1Times['4'], 'dummy', True)
 		self.robot.goto_position(movements.frontWalkEndL15, movements.frontWalkEndL1Times['5'], 'dummy', True)
 		self.robot.goto_position(movements.frontWalkEndL16, movements.frontWalkEndL1Times['6'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkEndL20, movements.frontWalkEndL2Times['0'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkEndL21, movements.frontWalkEndL2Times['1'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkEndL22, movements.frontWalkEndL2Times['2'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkEndL23, movements.frontWalkEndL2Times['3'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkEndL24, movements.frontWalkEndL2Times['4'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkEndL25, movements.frontWalkEndL2Times['5'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkEndL26, movements.frontWalkEndL2Times['6'], 'dummy', True)
 
 ##################################
 ###########frontWalkEndL2#########
@@ -443,6 +480,13 @@ class frontWalkEndR1(pypot.primitive.Primitive):
 		self.robot.goto_position(movements.frontWalkEndR14, movements.frontWalkEndR1Times['4'], 'dummy', True)
 		self.robot.goto_position(movements.frontWalkEndR15, movements.frontWalkEndR1Times['5'], 'dummy', True)
 		self.robot.goto_position(movements.frontWalkEndR16, movements.frontWalkEndR1Times['6'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkEndR20, movements.frontWalkEndR2Times['0'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkEndR21, movements.frontWalkEndR2Times['1'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkEndR22, movements.frontWalkEndR2Times['2'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkEndR23, movements.frontWalkEndR2Times['3'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkEndR24, movements.frontWalkEndR2Times['4'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkEndR25, movements.frontWalkEndR2Times['5'], 'dummy', True)
+		self.robot.goto_position(movements.frontWalkEndR26, movements.frontWalkEndR2Times['6'], 'dummy', True)
 
 ##################################
 ###########frontWalkEndR2#########
