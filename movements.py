@@ -472,3 +472,10 @@ frontWalkEndR24 = {"right_chest": -81.15, "left_chest": 80.86, "right_shoulder":
 frontWalkEndR25 = {"right_chest": -81.15, "left_chest": 80.86, "right_shoulder": -68.26, "left_shoulder": 67.97, "right_hand": -14.65, "left_hand": 14.36, "right_ab": -45.12, "left_ab": 45.12, "right_rear": -3.22, "left_rear": -0.59, "right_hip": -49.8, "left_hip": 49.51, "right_knee": -79.1, "left_knee": 79.1, "right_ankle": 39.26, "left_ankle": -39.55, "right_foot": -3.22, "left_foot": -0.59}
 frontWalkEndR26 = {"right_chest": -81.15, "left_chest": 80.86, "right_shoulder": -68.26, "left_shoulder": 67.97, "right_hand": -14.65, "left_hand": 14.36, "right_ab": -45.12, "left_ab": 45.12, "right_rear": -1.46, "left_rear": 1.17, "right_hip": -50.1, "left_hip": 49.8, "right_knee": -79.69, "left_knee": 79.39, "right_ankle": 39.55, "left_ankle": -39.84, "right_foot": -1.46, "left_foot": 1.17}
 frontWalkEndR2Times = {"0": 0.078125, "1": 0.078125, "2": 0.078125, "3": 0.078125, "4": 0.078125, "5": 0.078125, "6": 0.078125}
+
+
+##################################
+###########sit#########
+###################################
+sit0 = {"right_titty": -96.68, "left_titty": 96.39, "right_shoulder": -63.87, "left_shoulder": 63.57, "right_hand": -6.45, "left_hand": 6.15, "right_ab": -46.58, "left_ab": 46.29, "right_rear": -1.17, "left_rear": 0.88, "right_hip": -71.48, "left_hip": 71.19, "right_knee": -129.2, "left_knee": 128.91, "right_ankle": 70.61, "left_ankle": -70.9, "right_foot": -1.17, "left_foot": 0.88}
+sitTimes = {"0": 0.5859375}

@@ -16,6 +16,17 @@ class Bioloid:
         self.bioloid.start_sync()
         self.rightStep = True
 
+        #tells us which "Square he is in. OR maybe we do some step count where we count how
+        #many steps he has taken in certain directions to get an idea of where he is. He should
+        #return home most when he needs to stop.
+        self.location=[[0,0,0,0,0
+                        0,0,0,0,0
+                        0,0,1,0,0
+                        0,0,0,0,0,
+                        0,0,0,0,0]]
+        #have this be some product of turns Tells us which direction he is looking at
+        self.orientation = 0
+
         #print('Configuration complete...\n')
         #print('Bioloid:\n')
 
@@ -38,6 +49,7 @@ class Bioloid:
         self.frontWalkMiddleR1 = primitives.frontWalkMiddleR1(self.bioloid)
         self.frontWalkEndL1 = primitives.frontWalkEndL1(self.bioloid)
         self.frontWalkEndR1 = primitives.frontWalkEndR1(self.bioloid)
+        self.sit = primitives.sit(self.bioloid)
 
 
 
@@ -89,7 +101,9 @@ class Bioloid:
             self.frontWalkEndL1.wait_to_stop()
             self.rightStep = True
 
-
+    def doSit():
+        self.sit.start()
+        self.sit.wait_to_stop()
 
     def close(self):
         self.bioloid.close()

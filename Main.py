@@ -65,13 +65,22 @@ def main():
     # replace with robot name
     name = 'Bonnie'
 
+    lastActiveTime = time.time()
+
    # bioloid.doBow()
     #tts.speak('Hello my name is ' + name + ' I am a total Bro')
 
 
     while True:
+        if(lastActiveTime - time.time() > 60): #if it is inactive for 1 min then it powers down.
+            #Go home
+            bioloid.doSit()
+            #start visual recognition and wait for movement
+            #once movement is found it can move again
+
         phrase = stt.get_phrase()
         if (name in phrase) or ('bunny'in phrase) or ('body' in phrase) or ('Bani' in phrase):
+            lastActiveTime = time.time() #if its name is heard then we can assume it is active
             response = convo.sendMessage(phrase)
             if '~' in response:
                 processCommand(response)
