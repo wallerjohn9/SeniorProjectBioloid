@@ -26,8 +26,8 @@ for x in content:
     x = x.replace('"', '')
     angles = x.split(" ")
     #First angle value is at 4 Last one is at 21 in angles
-    frame['right_titty'] = float(angles[4])
-    frame['left_titty'] = float(angles[5])
+    frame['right_chest'] = float(angles[4])
+    frame['left_chest'] = float(angles[5])
     frame['right_shoulder'] = float(angles[6])
     frame['left_shoulder'] = float(angles[7])
     frame['right_hand'] = float(angles[8])

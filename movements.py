@@ -1,4 +1,4 @@
-################################################################################
+u################################################################################
 startPosDict = {
 		'right_chest': -81.15,
 		'left_chest': 80.86,
@@ -477,5 +477,5 @@ frontWalkEndR2Times = {"0": 0.078125, "1": 0.078125, "2": 0.078125, "3": 0.07812
 ##################################
 ###########sit#########
 ###################################
-sit0 = {"right_titty": -96.68, "left_titty": 96.39, "right_shoulder": -63.87, "left_shoulder": 63.57, "right_hand": -6.45, "left_hand": 6.15, "right_ab": -46.58, "left_ab": 46.29, "right_rear": -1.17, "left_rear": 0.88, "right_hip": -71.48, "left_hip": 71.19, "right_knee": -129.2, "left_knee": 128.91, "right_ankle": 70.61, "left_ankle": -70.9, "right_foot": -1.17, "left_foot": 0.88}
+sit0 = {"right_chest": -96.68, "left_chest": 96.39, "right_shoulder": -63.87, "left_shoulder": 63.57, "right_hand": -6.45, "left_hand": 6.15, "right_ab": -46.58, "left_ab": 46.29, "right_rear": -1.17, "left_rear": 0.88, "right_hip": -71.48, "left_hip": 71.19, "right_knee": -129.2, "left_knee": 128.91, "right_ankle": 70.61, "left_ankle": -70.9, "right_foot": -1.17, "left_foot": 0.88}
 sitTimes = {"0": 0.5859375}
