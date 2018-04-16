@@ -81,6 +81,8 @@ class StreamingSTT:
         if auto_threshold:
             self.auto_threshold()
 
+    logging.debug("The thing has been made")
+
     # Set the timeout
     def set_timeout(self, timeout):
         self.TIMEOUT = timeout
@@ -237,6 +239,8 @@ class StreamingSTT:
             "max_alternatives": 3
         }
 
+        logging.debug("I OPENED THJAT SHTI")
+
         # Send the dictionary through the socket.
         ws.send(json.dumps(data).encode('utf8'))
 
@@ -378,7 +382,7 @@ if __name__ == "__main__":
                 print(data['results'][0]['alternatives'][0]['transcript'])
 
     # print those errors
-    def on_error(self, error):
+    def on_error(self, ws, error):
         if __debug__:
             print(error)
 
