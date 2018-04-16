@@ -2,6 +2,7 @@ from __future__ import print_function
 import json
 from os.path import join, dirname
 from watson_developer_cloud import VisualRecognitionV3
+import configparser
 
 from picamera import PiCamera
 #sudo apt-get update
@@ -10,10 +11,15 @@ from picamera import PiCamera
 #will need imutils
 class VisualRecognition:
 
+    # configuration block for visual recognition API key.
+    config = configparser.ConfigParser()
+    config.read('/home/pi/SeniorProjectBioloid/config.cfg')
+    apiKey = config.get('Bioloid Credentials','visualApi')
+
     def __init__(self):
         self.cam = PiCamera()
         self.resources = '/home/pi/SeniorProjectBioloid/resources/'
-        self.visualRec = VisualRecognitionV3('2016-05-20', api_key='e4a3fcdf721e7c5c7fc8442fd854b0eb147f9067')
+        self.visualRec = VisualRecognitionV3('2016-05-20', apiKey)
 
 
     def viewObjects(self):
