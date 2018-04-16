@@ -29,42 +29,58 @@ import time
 import movements
 import bioloid as bio
 from subprocess import call
+import configparser
 
 
 
 def main():
 
+    # configuration block for IBM credentials
+    config = configparser.ConfigParser()
+    config.read('/home/pi/SeniorProjectBioloid/config.cfg')
+    sttUser = config.get('Bioloid Credentials','sttUser')
+    sttPw = config.get('Bioloid Credentials','sttPassword')
+    ttsUser = config.get('Bioloid Credentials','ttsUser')
+    ttsPw = config.get('Bioloid Credentials','ttsPassword')
+    convoUser = config.get('Bioloid Credentials','convoUser')
+    convoPw = config.get('Bioloid Credentials','convoPassword')
+    convoWorkSpace = config.get('Bioloid Credentials','convoWorkSpace')
+
+    # configuration for timeout options
+    timeoutWarning = config.get('Bioloid Information','timeoutWarning')
+    timeoutShutdown = config.get('Bioloid Information','timeoutShutdown')
+
     stt = streaming.StreamingSTT(
 
         # replace with speech to text credentials username
-        '030a85a9-4a06-4e21-806b-da2cf29549fb',
+        sttUser,
 
         # replace with speech to text credentials password
-        'AP3aAaPi0TSq')
+        sttPw)
 
     tts = textToSpeech.TextToSpeech(
 
         # replace with text to speech credentials username
-        '2cb70eda-ccc5-40d7-adee-91c9aa249841',
+        ttsUser,
 
         # replace with text to speech credentials password
-        'zyzBtEqo73D7')
+        ttsPw)
 
     convo = conversation.Conversation(
 
         # replace with conversation credentials username
-        '154b5b29-d1ca-4ff2-be09-c33c5e1d9e20',
+        convoUser,
 
         # replace with conversation credentials password
-        'pmNftYlpvMS8',
+        convoPw,
 
         # replace with workspace ID.
-        'da21184b-ae02-4159-9727-d994fc1bbaaf')
+        convoWorkSpace)
 
     bioloid = bio.Bioloid()
 
     # replace with robot name
-    name = 'Bonnie'
+    name = config.get('Bioloid Information','name')
 
     lastActiveTime = time.time()
 
@@ -75,12 +91,12 @@ def main():
 
 
     while True:
-        if all( [time.time() - lastActiveTime > 60, activeTimeCheck == True] ):
+        if all( [time.time() - lastActiveTime > timeoutWarning, activeTimeCheck == True] ):
             bioloid.doSit()
             tts.speak("I have been inactive for 1 minute. After another minute, I will shut down")
             activeTimeCheck = False
 
-        if all( [time.time() - lastActiveTime > 120, activeTimeCheck == False] ):
+        if all( [time.time() - lastActiveTime > timeoutShutdown, activeTimeCheck == False] ):
             tts.speak("Shutting down now.")
             call("sudo shutdown -h now", shell=True)
 
