@@ -19,11 +19,12 @@ class Bioloid:
         #tells us which "Square he is in. OR maybe we do some step count where we count how
         #many steps he has taken in certain directions to get an idea of where he is. He should
         #return home most when he needs to stop.
-       # self.location=[[0,0,0,0,0
-        #                0,0,0,0,0
-         #               0,0,1,0,0
-          #              0,0,0,0,0,
-           #             0,0,0,0,0]]
+        """self.location=[[0,0,0,0,0
+                        0,0,0,0,0
+                        0,0,1,0,0
+                        0,0,0,0,0,
+                        0,0,0,0,0]]
+        """
         #have this be some product of turns Tells us which direction he is looking at
         self.orientation = 0
 

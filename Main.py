@@ -28,6 +28,7 @@ import RPi.GPIO as GPIO
 import time
 import movements
 import bioloid as bio
+from subprocess import call
 
 
 
@@ -67,20 +68,31 @@ def main():
 
     lastActiveTime = time.time()
 
+    activeTimeCheck = True # This boolean differentiates between inactivity for 60 or 120 seconds.
+
    # bioloid.doBow()
     tts.speak('Hello my name is ' + name + ' I am a total Bro')
 
 
     while True:
+        if all( [time.time() - lastActiveTime > 60, activeTimeCheck == True] ):
+            bioloid.doSit()
+            tts.speak("I have been inactive for 1 minute. After another minute, I will shut down")
+            activeTimeCheck = False
+
+        if all( [time.time() - lastActiveTime > 120, activeTimeCheck == False] ):
+            tts.speak("Shutting down now.")
+            call("sudo shutdown -h now", shell=True)
+
+        """
         if(lastActiveTime - time.time() > 60): #if it is inactive for 1 min then it powers down.
             #Go home
-            bioloid.doSit()
-            #start visual recognition and wait for movement
-            #once movement is found it can move again
-        print("Active and Getting Phrase")
+            tts.speak("I have been inactive for 1 minute. After another minute, I will shut down")
+        """
         phrase = stt.get_phrase()
         if (name in phrase) or ('bunny'in phrase) or ('body' in phrase) or ('Bani' in phrase):
             lastActiveTime = time.time() #if its name is heard then we can assume it is active
+            activeTimeCheck = True
             response = convo.sendMessage(phrase)
             if '~' in response:
                 processCommand(response)
