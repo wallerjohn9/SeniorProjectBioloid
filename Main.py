@@ -68,7 +68,7 @@ def main():
     lastActiveTime = time.time()
 
    # bioloid.doBow()
-    #tts.speak('Hello my name is ' + name + ' I am a total Bro')
+    tts.speak('Hello my name is ' + name + ' I am a total Bro')
 
 
     while True:
@@ -77,7 +77,7 @@ def main():
             bioloid.doSit()
             #start visual recognition and wait for movement
             #once movement is found it can move again
-
+        print("Active and Getting Phrase")
         phrase = stt.get_phrase()
         if (name in phrase) or ('bunny'in phrase) or ('body' in phrase) or ('Bani' in phrase):
             lastActiveTime = time.time() #if its name is heard then we can assume it is active
