@@ -102,7 +102,7 @@ class Bioloid:
             self.frontWalkEndL1.wait_to_stop()
             self.rightStep = True
 
-    def doSit():
+    def doSit(self):
         self.sit.start()
         self.sit.wait_to_stop()
 
