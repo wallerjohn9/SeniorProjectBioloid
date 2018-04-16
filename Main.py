@@ -75,12 +75,12 @@ def main():
 
 
     while True:
-        if all( [lastActiveTime - time.time() > 60, activeTimeCheck == True] ):
+        if all( [time.time() - lastActiveTime > 60, activeTimeCheck == True] ):
             bioloid.doSit()
             tts.speak("I have been inactive for 1 minute. After another minute, I will shut down")
             activeTimeCheck = False
 
-        if all( [lastActiveTime - time.time() > 120, activeTimeCheck == False] ):
+        if all( [time.time() - lastActiveTime > 120, activeTimeCheck == False] ):
             tts.speak("Shutting down now.")
             call("sudo shutdown -h now", shell=True)
 
