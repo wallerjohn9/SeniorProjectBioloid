@@ -28,6 +28,7 @@ import RPi.GPIO as GPIO
 import time
 import movements
 import bioloid as bio
+import visualRecognition as vis
 from subprocess import call
 import configparser
 
@@ -77,6 +78,9 @@ def main():
         # replace with workspace ID.
         convoWorkSpace)
 
+    vr = vis.VisualRecognition()
+    vr.viewObjects()
+    vr.viewFaces()
     bioloid = bio.Bioloid()
 
     # replace with robot name
