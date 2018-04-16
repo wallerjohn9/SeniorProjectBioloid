@@ -2,81 +2,93 @@ from __future__ import print_function
 import JSONfrom os.path import join, dirname
 from watson_developer_cloud import VisualRecognitionV3
 
-import picamera
+from picamera import PiCamera
 #sudo apt-get update
 #sudo apt-get install python-picamera
 #will ned CV2
 #will need imutils
 class VisualRecognition:
 
-    def __init__():
+    def __init__(self):
+        self.cam = PiCamera()
+        self.recources = '/home/pi/SeniorProjectBioloid/resources/'
+        self.visualRec = VisualRecognitionV3('2016-05-20', api_key='e4a3fcdf721e7c5c7fc8442fd854b0eb147f9067')
+
+
+    def viewImage(self):
+        filePath = resoruces + 'tmp.jpg'
+        self.cam.capture(filePath)
+        with open(filePath, 'rb') ad images_file:
+            parameters = json.dumps({'threshold': 0.1, 'classifier_ids': [classifier_id, 'default']})
+            results = self.visualRec.classify(images_file=images_file, parameters=parameters)
+            print(json.dumps(results))
 
     '''
         Will check and see if there is motion.
         Stays in this while loop until there is motion and then returns true
         Credit to adrian@pyimagesearch.com for this code
     '''
-    def motionDetection():
+    def motionDetection(self):
         camera = cv2.VideoCapture(0)
         time.sleep(0.25)
 
         # loop over the frames of the video
-while True:
-	# grab the current frame and initialize the occupied/unoccupied
-	# text
-	(grabbed, frame) = camera.read()
-	text = "Unoccupied"
+        while True:
+    	# grab the current frame and initialize the occupied/unoccupied
+    	# text
+    	(grabbed, frame) = camera.read()
+    	text = "Unoccupied"
 
-	# if the frame could not be grabbed, then we have reached the end
-	# of the video
-	if not grabbed:
-		break
+    	# if the frame could not be grabbed, then we have reached the end
+    	# of the video
+    	if not grabbed:
+    		break
 
-	# resize the frame, convert it to grayscale, and blur it
-	frame = imutils.resize(frame, width=500)
-	gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-	gray = cv2.GaussianBlur(gray, (21, 21), 0)
+    	# resize the frame, convert it to grayscale, and blur it
+    	frame = imutils.resize(frame, width=500)
+    	gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    	gray = cv2.GaussianBlur(gray, (21, 21), 0)
 
-	# if the first frame is None, initialize it
-	if firstFrame is None:
-		firstFrame = gray
-		continue
+    	# if the first frame is None, initialize it
+    	if firstFrame is None:
+    		firstFrame = gray
+    		continue
 
-	# compute the absolute difference between the current frame and
-	# first frame
-	frameDelta = cv2.absdiff(firstFrame, gray)
-	thresh = cv2.threshold(frameDelta, 25, 255, cv2.THRESH_BINARY)[1]
+    	# compute the absolute difference between the current frame and
+    	# first frame
+    	frameDelta = cv2.absdiff(firstFrame, gray)
+    	thresh = cv2.threshold(frameDelta, 25, 255, cv2.THRESH_BINARY)[1]
 
-	# dilate the thresholded image to fill in holes, then find contours
-	# on thresholded image
-	thresh = cv2.dilate(thresh, None, iterations=2)
-	(cnts, _) = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
-		cv2.CHAIN_APPROX_SIMPLE)
+    	# dilate the thresholded image to fill in holes, then find contours
+    	# on thresholded image
+    	thresh = cv2.dilate(thresh, None, iterations=2)
+    	(cnts, _) = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
+    		cv2.CHAIN_APPROX_SIMPLE)
 
-	# loop over the contours
-	for c in cnts:
-		# if the contour is too small, ignore it
-		if cv2.contourArea(c) < args["min_area"]:
-			continue
+    	# loop over the contours
+    	for c in cnts:
+    		# if the contour is too small, ignore it
+    		if cv2.contourArea(c) < args["min_area"]:
+    			continue
 
-		# compute the bounding box for the contour, draw it on the frame,
-		# and update the text
-		(x, y, w, h) = cv2.boundingRect(c)
-		cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
-		text = "Occupied"
+    		# compute the bounding box for the contour, draw it on the frame,
+    		# and update the text
+    		(x, y, w, h) = cv2.boundingRect(c)
+    		cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
+    		text = "Occupied"
 
-	# draw the text and timestamp on the frame
-	cv2.putText(frame, "Room Status: {}".format(text), (10, 20),
-		cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
-	cv2.putText(frame, datetime.datetime.now().strftime("%A %d %B %Y %I:%M:%S%p"),
-		(10, frame.shape[0] - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.35, (0, 0, 255), 1)
+    	# draw the text and timestamp on the frame
+    	cv2.putText(frame, "Room Status: {}".format(text), (10, 20),
+    		cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
+    	cv2.putText(frame, datetime.datetime.now().strftime("%A %d %B %Y %I:%M:%S%p"),
+    		(10, frame.shape[0] - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.35, (0, 0, 255), 1)
 
-	# show the frame and record if the user presses a key
-	cv2.imshow("Security Feed", frame)
-	cv2.imshow("Thresh", thresh)
-	cv2.imshow("Frame Delta", frameDelta)
-	key = cv2.waitKey(1) & 0xFF
+    	# show the frame and record if the user presses a key
+    	cv2.imshow("Security Feed", frame)
+    	cv2.imshow("Thresh", thresh)
+    	cv2.imshow("Frame Delta", frameDelta)
+    	key = cv2.waitKey(1) & 0xFF
 
-	# if the `q` key is pressed, break from the lop
-	if key == ord("q"):
-		break
+    	# if the `q` key is pressed, break from the lop
+    	if key == ord("q"):
+    		break

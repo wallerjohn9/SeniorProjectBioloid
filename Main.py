@@ -28,6 +28,7 @@ import RPi.GPIO as GPIO
 import time
 import movements
 import bioloid as bio
+import VisualRecognition as VisRec
 from subprocess import call
 
 
@@ -61,6 +62,8 @@ def main():
         # replace with workspace ID.
         'da21184b-ae02-4159-9727-d994fc1bbaaf')
 
+    vr = VisRec.VisualRecognition()
+    vr.viewImage()
     bioloid = bio.Bioloid()
 
     # replace with robot name
