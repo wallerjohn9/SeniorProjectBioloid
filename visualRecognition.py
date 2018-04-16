@@ -16,17 +16,23 @@ class VisualRecognition:
         self.visualRec = VisualRecognitionV3('2016-05-20', api_key='e4a3fcdf721e7c5c7fc8442fd854b0eb147f9067')
 
 
-    def viewImage(self):
+    def viewObjects(self):
         filePath = self.resources + 'tmp.jpg'
         self.cam.capture(filePath)
         classifier_id = 'default'
         with open(filePath, 'rb') as images_file:
             parameters = json.dumps({'threshold': 0.1, 'classifier_ids': [classifier_id, 'default']})
-            #results = self.visualRec.classify(images_file=images_file)
+            results = self.visualRec.classify(images_file=images_file)
+            print(json.dumps(results))
+
+    def viewFaces(self):
+        filePath = self.resources + 'tmp.jpg'
+        self.cam.capture(filePath)
+        classifier_id = 'default'
+        with open(filePath, 'rb') as images_file:
+            parameters = json.dumps({'threshold': 0.1, 'classifier_ids': [classifier_id, 'default']})
             face = self.visualRec.detect_faces(images_file=images_file)
             print(json.dumps(face))
-           # print(json.dumps(results))
-
     '''
         Will check and see if there is motion.
         Stays in this while loop until there is motion and then returns true
@@ -97,4 +103,3 @@ class VisualRecognition:
     	if key == ord("q"):
     		break
         '''
-    

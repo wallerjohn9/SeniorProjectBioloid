@@ -63,7 +63,8 @@ def main():
         'da21184b-ae02-4159-9727-d994fc1bbaaf')
 
     vr = vis.VisualRecognition()
-    vr.viewImage()
+    vr.viewObjects()
+    vr.viewFaces()
     bioloid = bio.Bioloid()
 
     # replace with robot name
