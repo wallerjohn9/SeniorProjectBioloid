@@ -1,5 +1,6 @@
 from __future__ import print_function
-import JSONfrom os.path import join, dirname
+import json
+from os.path import join, dirname
 from watson_developer_cloud import VisualRecognitionV3
 
 from picamera import PiCamera
@@ -11,23 +12,26 @@ class VisualRecognition:
 
     def __init__(self):
         self.cam = PiCamera()
-        self.recources = '/home/pi/SeniorProjectBioloid/resources/'
+        self.resources = '/home/pi/SeniorProjectBioloid/resources/'
         self.visualRec = VisualRecognitionV3('2016-05-20', api_key='e4a3fcdf721e7c5c7fc8442fd854b0eb147f9067')
 
 
     def viewImage(self):
-        filePath = resoruces + 'tmp.jpg'
+        filePath = self.resources + 'tmp.jpg'
         self.cam.capture(filePath)
-        with open(filePath, 'rb') ad images_file:
+        classifier_id = 'default'
+        with open(filePath, 'rb') as images_file:
             parameters = json.dumps({'threshold': 0.1, 'classifier_ids': [classifier_id, 'default']})
-            results = self.visualRec.classify(images_file=images_file, parameters=parameters)
-            print(json.dumps(results))
+            #results = self.visualRec.classify(images_file=images_file)
+            face = self.visualRec.detect_faces(images_file=images_file)
+            print(json.dumps(face))
+           # print(json.dumps(results))
 
     '''
         Will check and see if there is motion.
         Stays in this while loop until there is motion and then returns true
         Credit to adrian@pyimagesearch.com for this code
-    '''
+    ''
     def motionDetection(self):
         camera = cv2.VideoCapture(0)
         time.sleep(0.25)
@@ -92,3 +96,5 @@ class VisualRecognition:
     	# if the `q` key is pressed, break from the lop
     	if key == ord("q"):
     		break
+        '''
+    
