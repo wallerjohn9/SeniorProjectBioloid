@@ -107,7 +107,7 @@ def main():
 
     activeTimeCheck = True # This boolean differentiates between inactivity for 60 or 120 seconds.
 
-   # bioloid.doBow()
+    bioloid.doBow(False)
     tts.speak('Hello my name is ' + name + ' I am a total Bro')
 
 
