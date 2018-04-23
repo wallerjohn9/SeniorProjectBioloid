@@ -54,7 +54,6 @@ class VisualRecognition:
             if sObj == (seenObjects[i-1]):
                 whatToSay += " and Lastly I see a " + sObj
             else:
-
                 whatToSay += " a " + sObj
 
         print(whatToSay)
@@ -85,7 +84,8 @@ class VisualRecognition:
 
     def viewFaces(self):
         filePath = self.resources + 'tmp.jpg'
-        whatToSay = "Pretty sure I see a "
+        startPhrase = "Pretty sure I see a "
+        whatToSay = startPhrase
         gender = ''
         ageMax = 99
         ageMin = 0
@@ -101,6 +101,9 @@ class VisualRecognition:
             ageMax = f['age']['max']
             ageMin = f['age']['min']
             whatToSay += gender + " between the ages of " + str(ageMin) + " and " + str(ageMax)
+            
+        if(whatToSay == startPhrase):
+            whatToSay = "I do not see any one"
 
         return whatToSay
     '''
