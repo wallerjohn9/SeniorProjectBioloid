@@ -48,8 +48,8 @@ def main():
     convoWorkSpace = config.get('Bioloid Credentials','convoWorkSpace')
 
     # configuration for timeout options
-    timeoutWarning = config.get('Bioloid Information','timeoutWarning')
-    timeoutShutdown = config.get('Bioloid Information','timeoutShutdown')
+    timeoutWarning = float(config.get('Bioloid Information','timeoutWarning'))
+    timeoutShutdown = float(config.get('Bioloid Information','timeoutShutdown'))
 
     try:
         stt = streaming.StreamingSTT(
@@ -93,7 +93,7 @@ def main():
     bioloid = bio.Bioloid()
 
     bioloid.doLookUp()
-    
+
     say = vr.viewObjects()
     tts.speak(say, False)
     say = vr.viewFaces()
