@@ -66,7 +66,7 @@ class Bioloid:
         self.idlePosition.start()
         if wait:
             self.idlePosition.wait_to_stop()
-    def doBow(self wait=True):
+    def doBow(self, wait=True):
         self.bow.start()
         if wait:
             self.bow.wait_to_stop()
