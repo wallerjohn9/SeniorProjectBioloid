@@ -91,7 +91,8 @@ def main():
     vr = vis.VisualRecognition()
     say = vr.viewObjects()
     tts.speak(say, False)
-    vr.viewFaces()
+    say = vr.viewFaces()
+    tts.speak(say, False)
     bioloid = bio.Bioloid()
 
     # replace with robot name

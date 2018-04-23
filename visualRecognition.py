@@ -85,12 +85,27 @@ class VisualRecognition:
 
     def viewFaces(self):
         filePath = self.resources + 'tmp.jpg'
+        whatToSay = "Pretty sure I see a "
+        gender = ''
+        ageMax = 99
+        ageMin = 0
         self.cam.capture(filePath)
         classifier_id = 'default'
         with open(filePath, 'rb') as images_file:
             parameters = json.dumps({'threshold': 0.1, 'classifier_ids': [classifier_id, 'default']})
             face = self.visualRec.detect_faces(images_file=images_file)
             print(json.dumps(face))
+
+        for f in face['images'][0]['faces']
+            gender = f['gender']['gender']
+            ageMax = f['age']['max']
+            ageMin = f['age']['max']
+            whatToSay += gender + " between the ages of " + ageMin + " and " + ageMax
+
+        return whatToSay
+    '''
+    {"images_processed": 1, "images": [{"faces": [{"face_location": {"height": 150, "left": 231, "top": 90, "width": 148} , "gender": {"gender": "MALE", "score": 0.9866701}, "age": {"min": 18, "max": 21, "score": 0.895782}}], "image": "/ho
+    '''
     '''
         Will check and see if there is motion.
         Stays in this while loop until there is motion and then returns true
