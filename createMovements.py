@@ -1,3 +1,13 @@
+'''
+    @Author Brian McGinnis
+    This program reads in the rawmovements.txt file and creates the needed
+    python code and appends it to the proper files. The informaiton from
+    rawmovements.txt comes fromt the Robotis R+ Motion software.
+    The movement is created and simulated in R+ motion and the file saved
+    When the file is saved you can open the outputed file in notepad and find
+    the movements. Put them in this and they will be added to python. 
+'''
+
 import json
 with open("rawmovements.txt") as f:
     content = f.readlines()

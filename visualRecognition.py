@@ -30,6 +30,7 @@ class VisualRecognition:
             parameters = json.dumps({'threshold': 0.1, 'classifier_ids': [classifier_id, 'default']})
             results = self.visualRec.classify(images_file=images_file)
             print(json.dumps(results))
+        #iterate over the JSON file and find out how many are Object that are recognized. 
 
     def viewFaces(self):
         filePath = self.resources + 'tmp.jpg'

@@ -58,8 +58,11 @@ class StreamingSTT:
     # the actual websocket
     WS = None
 
-    # Constructor.  Basically all you really need is StreamingSTT(<username>,
-    # <password>)
+
+    '''
+     Constructor.  Basically all you really need is StreamingSTT(<username>
+     <password>)
+    '''
     def __init__(
             self,
             username,
@@ -131,7 +134,7 @@ class StreamingSTT:
     def get_silence_limit(self):
         return SILENCE_LIMIT
 
-    # automatically calculate threshold.
+    '''automatically calculate threshold.
     # Parameters:
     #   samples: number of chunks to read from microphone.
     #   avgintensities: the top x% of the highest intensites read to be
@@ -139,6 +142,7 @@ class StreamingSTT:
     #   averaged together.
     #   padding: how far above the average intensity the voice should be.
     # TODO: check to make sure this is actually beneficial to performance.
+    '''
     def auto_threshold(self, samples=100, avgintensities=0.2, padding=10):
         logging.debug("Auto-thresholding...")
         stream = self.p.open(
@@ -167,7 +171,9 @@ class StreamingSTT:
 
         logging.debug("Threshold: {}".format(self.THRESHOLD))
 
-    # read_audio starts a stream and sends chunks to watson real-time.
+    '''
+    read_audio starts a stream and sends chunks to watson real-time.
+    '''
     def read_audio(self, ws, timeout):
 
         # get a stream
@@ -224,8 +230,10 @@ class StreamingSTT:
         ws.close()
         #p.terminate()
 
+    '''
     # this callback is used when the connection is activated.
     # basically initializing and configuring settings and stuff
+    '''
     def on_open(self, ws):
 
         # dump this config dictionary out to JSON
@@ -285,10 +293,12 @@ class StreamingSTT:
     def on_close(self, ws):
         logging.debug("Websocket closed.")
 
+    '''
     # get_phrase should not be confused with read_audio.
     # get_phrase should always be called instead of read_audio.
     # it makes the necessary re-initializations and then calls read_audio
     # itself.
+    '''
     def get_phrase(self):
 
         # empty out the finals list of the data from last use.
