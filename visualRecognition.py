@@ -96,11 +96,11 @@ class VisualRecognition:
             face = self.visualRec.detect_faces(images_file=images_file)
             print(json.dumps(face))
 
-        for f in face['images'][0]['faces']
+        for f in face['images'][0]['faces']:
             gender = f['gender']['gender']
             ageMax = f['age']['max']
-            ageMin = f['age']['max']
-            whatToSay += gender + " between the ages of " + ageMin + " and " + ageMax
+            ageMin = f['age']['min']
+            whatToSay += gender + " between the ages of " + str(ageMin) + " and " + str(ageMax)
 
         return whatToSay
     '''
