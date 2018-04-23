@@ -29,24 +29,29 @@ class VisualRecognition:
         seenObjects = []
         whatToSay = "I am pretty sure I see a"
         i = 0;
+        res = {}
         self.cam.capture(filePath)
         classifier_id = 'default'
         with open(filePath, 'rb') as images_file:
             parameters = json.dumps({'threshold': 0.1, 'classifier_ids': [classifier_id, 'default']})
             results = self.visualRec.classify(images_file=images_file)
 
-            print(json.dumps(results))
+            #print(json.dumps(results))
+            json.dumps(results, res)
         #iterate over the JSON file and find out how many are Object that are recognized.
-
-        for obj in results["images"]["classifiers"]["classes"]:
-            if obj["score"] > .6:
-                seenObjects[i] = obj["class"]
+        
+        print(res)
+        print(results)
+        for obj in res[1][0][0]:
+            if obj[0] > .6:
+                seenObjects[i] = obj[1]
                 i += 1
 
         for sObj in seenObjects:
             if sObj.equals(seenObjects[i]):
                 whatToSay += " and Lastly I see a " + sObj
-            else
+            else:
+
                 whatToSay += " a " + sObj
 
         print(whatToSay)
