@@ -51,32 +51,42 @@ def main():
     timeoutWarning = config.get('Bioloid Information','timeoutWarning')
     timeoutShutdown = config.get('Bioloid Information','timeoutShutdown')
 
-    stt = streaming.StreamingSTT(
+    try:
+        stt = streaming.StreamingSTT(
 
-        # replace with speech to text credentials username
-        sttUser,
+            # replace with speech to text credentials username
+            sttUser,
 
-        # replace with speech to text credentials password
-        sttPw)
+            # replace with speech to text credentials password
+            sttPw)
+    except:
+        fatalFailure()
 
-    tts = textToSpeech.TextToSpeech(
+    try:
+        tts = textToSpeech.TextToSpeech(
 
-        # replace with text to speech credentials username
-        ttsUser,
+            # replace with text to speech credentials username
+            ttsUser,
 
-        # replace with text to speech credentials password
-        ttsPw)
+            # replace with text to speech credentials password
+            ttsPw)
+    except:
+        fatalFailure()
 
-    convo = conversation.Conversation(
 
-        # replace with conversation credentials username
-        convoUser,
+    try:
+        convo = conversation.Conversation(
 
-        # replace with conversation credentials password
-        convoPw,
+            # replace with conversation credentials username
+            convoUser,
 
-        # replace with workspace ID.
-        convoWorkSpace)
+            # replace with conversation credentials password
+            convoPw,
+
+            # replace with workspace ID.
+            convoWorkSpace)
+    except:
+        fatalFailure()
 
     vr = vis.VisualRecognition()
     vr.viewObjects()
@@ -118,6 +128,13 @@ def main():
                 processCommand(response)
 
             tts.speak(response)
+
+def fatalFailure():
+    while(True):
+        ledP.red()
+        time.sleep(500)
+        ledP.customColor(0,0,0)
+        time.sleep(500)
 
 
 def processCommand(response):
@@ -191,6 +208,8 @@ def processCommand(response):
     if response == '':
         response = 'akward silence'
     '''
+
+
 
 if __name__ == "__main__":
     main()
