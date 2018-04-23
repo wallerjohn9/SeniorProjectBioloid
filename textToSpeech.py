@@ -121,6 +121,7 @@ class TextToSpeech:
             if save == False:
                 fileName = "tempOutput"
             path = self.fileLocation + fileName + ".wav"
+            print(path)
             if(os.path.isfile(path)):
                 print("Trigered")
                 self.play(message)
