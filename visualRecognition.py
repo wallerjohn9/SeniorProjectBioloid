@@ -11,12 +11,14 @@ from picamera import PiCamera
 #will need imutils
 class VisualRecognition:
 
-    # configuration block for visual recognition API key.
-    config = configparser.ConfigParser()
-    config.read('/home/pi/SeniorProjectBioloid/config.cfg')
-    apiKey = config.get('Bioloid Credentials','visualApi')
+
 
     def __init__(self):
+        # configuration block for visual recognition API key.
+        config = configparser.ConfigParser()
+        config.read('/home/pi/SeniorProjectBioloid/config.cfg')
+        apiKey = config.get('Bioloid Credentials','visualApi')
+        
         self.cam = PiCamera()
         self.resources = '/home/pi/SeniorProjectBioloid/resources/'
         self.visualRec = VisualRecognitionV3('2016-05-20', apiKey)
@@ -30,7 +32,7 @@ class VisualRecognition:
             parameters = json.dumps({'threshold': 0.1, 'classifier_ids': [classifier_id, 'default']})
             results = self.visualRec.classify(images_file=images_file)
             print(json.dumps(results))
-        #iterate over the JSON file and find out how many are Object that are recognized. 
+        #iterate over the JSON file and find out how many are Object that are recognized.
 
     def viewFaces(self):
         filePath = self.resources + 'tmp.jpg'
