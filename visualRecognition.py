@@ -26,6 +26,7 @@ class VisualRecognition:
 
     def viewObjects(self):
         filePath = self.resources + 'tmp.jpg'
+        threshold = .55
         seenObjects = []
         whatToSay = "I am pretty sure I see a"
         i = 0;
@@ -45,7 +46,7 @@ class VisualRecognition:
         for obj in results['images'][0]['classifiers'][0]['classes']:
             print(obj)
             print(obj['score'])
-            if obj['score'] >= .6:
+            if obj['score'] >= threshold:
                 seenObjects.append(obj['class'])
                 print(seenObjects[i])
                 i += 1
@@ -101,9 +102,9 @@ class VisualRecognition:
             ageMax = f['age']['max']
             ageMin = f['age']['min']
             whatToSay += gender + " between the ages of " + str(ageMin) + " and " + str(ageMax)
-            
+
         if(whatToSay == startPhrase):
-            whatToSay = "I do not see any one"
+            whatToSay = "I do not see any people I can recognize"
 
         return whatToSay
     '''

@@ -99,6 +99,7 @@ def main():
     say = vr.viewFaces()
     tts.speak(say, False)
 
+    bioloid.doIdle(False)
     # replace with robot name
     name = config.get('Bioloid Information','name')
 
