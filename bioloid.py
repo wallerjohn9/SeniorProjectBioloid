@@ -51,7 +51,7 @@ class Bioloid:
         self.frontWalkEndL1 = primitives.frontWalkEndL1(self.bioloid)
         self.frontWalkEndR1 = primitives.frontWalkEndR1(self.bioloid)
         self.sit = primitives.sit(self.bioloid)
-        self.lookUp = primitive.lookUp(self.bioloid)
+        self.lookUp = primitives.lookUp(self.bioloid)
 
 
 
