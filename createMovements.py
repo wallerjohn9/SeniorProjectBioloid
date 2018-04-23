@@ -5,7 +5,7 @@
     rawmovements.txt comes fromt the Robotis R+ Motion software.
     The movement is created and simulated in R+ motion and the file saved
     When the file is saved you can open the outputed file in notepad and find
-    the movements. Put them in this and they will be added to python. 
+    the movements. Put them in this and they will be added to python.
 '''
 
 import json
@@ -14,7 +14,7 @@ with open("rawmovements.txt") as f:
 # you may also want to remove whitespace characters like `\n` at the end of each line
 i=0
 movements = {}
-moveName = 'sit'
+moveName = 'lookUp'
 time = {}
 lastFrame = 0
 with open("primitives.py", 'a+') as c:

@@ -89,11 +89,15 @@ def main():
         fatalFailure()
 
     vr = vis.VisualRecognition()
+
+    bioloid = bio.Bioloid()
+
+    bioloid.doLookUp()
+    
     say = vr.viewObjects()
     tts.speak(say, False)
     say = vr.viewFaces()
     tts.speak(say, False)
-    bioloid = bio.Bioloid()
 
     # replace with robot name
     name = config.get('Bioloid Information','name')

@@ -518,3 +518,15 @@ class sit(pypot.primitive.Primitive):
 
 	def run(self):
 		self.robot.goto_position(movements.sit0, movements.sitTimes['0'], 'dummy', True)
+
+##################################
+###########lookUp#########
+###################################
+
+class lookUp(pypot.primitive.Primitive):
+	def __init__(self, robot):
+		self.robot = robot
+		pypot.primitive.Primitive.__init__(self, robot)
+
+	def run(self):
+		self.robot.goto_position(movements.lookUp0, movements.lookUpTimes['0'], 'dummy', True)
