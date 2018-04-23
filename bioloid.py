@@ -99,6 +99,7 @@ class Bioloid:
                 self.frontWalkMiddleL1.start()
                 self.frontWalkMiddleL1.wait_to_stop()
                 self.rightStep = True
+            steps = steps - 1
         if(self.rightStep):
             self.frontWalkEndR1.start()
             self.frontWalkEndR1.wait_to_stop()
