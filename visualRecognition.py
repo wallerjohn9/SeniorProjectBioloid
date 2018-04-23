@@ -21,7 +21,7 @@ class VisualRecognition:
 
         self.cam = PiCamera()
         self.resources = '/home/pi/SeniorProjectBioloid/resources/'
-        self.visualRec = VisualRecognitionV3('2016-05-20', apiKey = key)
+        self.visualRec = VisualRecognitionV3('2016-05-20', api_key = key)
 
 
     def viewObjects(self):
