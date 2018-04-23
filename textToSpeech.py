@@ -39,7 +39,7 @@ class TextToSpeech:
 
 
 #beautiful Block of code
-    def speak(self, message):
+    def speak(self, message, save=True):
         print(message)
         if(message == "Welcome to CBU! We have a beautiful 75-acre campus and are the oldest degree granting university in Memphis. What else would you like to know about CBU?"):
             self.play("VisitorsResponse1")
