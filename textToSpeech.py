@@ -123,6 +123,8 @@ class TextToSpeech:
                 print("Trigered")
                 self.play(message)
             else: #not a saved response so it just does this
+                if save == False:
+                    fileName = "tempOutput"
                 tmp = (self.fileLocation + fileName + ".wav")
                 print(tmp)
                 with open(join(dirname(__file__), tmp), 'wb') as audio_file:
