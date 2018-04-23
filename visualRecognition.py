@@ -26,13 +26,53 @@ class VisualRecognition:
 
     def viewObjects(self):
         filePath = self.resources + 'tmp.jpg'
+        seenObjects = []
+        whatToSay = "I am pretty sure I see a"
+        i = 0;
         self.cam.capture(filePath)
         classifier_id = 'default'
         with open(filePath, 'rb') as images_file:
             parameters = json.dumps({'threshold': 0.1, 'classifier_ids': [classifier_id, 'default']})
             results = self.visualRec.classify(images_file=images_file)
+
             print(json.dumps(results))
         #iterate over the JSON file and find out how many are Object that are recognized.
+
+        for obj in results["images"]["classifiers"]["classes"]:
+            if obj["score"] > .6:
+                seenObjects[i] = obj["class"]
+                i += 1
+
+        for sObj in seenObjects:
+            if sObj.equals(seenObjects[i]):
+                whatToSay += " and Lastly I see a " + sObj
+            else
+                whatToSay += " a " + sObj
+
+        print(whatToSay)
+
+
+
+    '''
+
+    {"custom_classes": 0, "images":
+        [{"classifiers":
+            [{"classes":
+                [{"score": 0.658, "type_hierarchy": "/furniture/table/kitchen table", "class": "kitchen table"},
+                    {"score": 0.658, "class": "table"},
+                    {"score": 0.739, "class": "furniture"},
+                    {"score": 0.561, "class": "space heater"},
+                    {"score": 0.521, "class": "corner"},
+                    {"score": 0.5, "class": "stove"},
+                    {"score": 0.6, "class": "heater"},
+                    {"score": 0.599, "class": "indoors"},
+                    {"score": 0.724, "class": "dark red color"},
+                    {"score": 0.678, "class": "reddish orange color"}],
+                "classifier_id": "default", "name": "default"}],
+            "image": "/home/pi/SeniorProjectBioloid/resources/tmp.jpg"}],
+        "images_processed": 1}
+
+    '''
 
     def viewFaces(self):
         filePath = self.resources + 'tmp.jpg'
