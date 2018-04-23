@@ -17,11 +17,11 @@ class VisualRecognition:
         # configuration block for visual recognition API key.
         config = configparser.ConfigParser()
         config.read('/home/pi/SeniorProjectBioloid/config.cfg')
-        apiKey = config.get('Bioloid Credentials','visualApi')
-        
+        key = config.get('Bioloid Credentials','visualApi')
+
         self.cam = PiCamera()
         self.resources = '/home/pi/SeniorProjectBioloid/resources/'
-        self.visualRec = VisualRecognitionV3('2016-05-20', apiKey)
+        self.visualRec = VisualRecognitionV3('2016-05-20', apiKey = key)
 
 
     def viewObjects(self):
