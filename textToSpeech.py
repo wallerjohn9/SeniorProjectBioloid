@@ -118,14 +118,14 @@ class TextToSpeech:
         else:
             fileName = message.replace(" ", "_")
             fileName = fileName.replace("'", "")
-            if save == False:
-                fileName = "tempOutput"
             path = self.fileLocation + fileName + ".wav"
             print(path)
             if(os.path.isfile(path)):
                 print("Trigered")
-                self.play(message)
+                self.play(fileName)
             else: #not a saved response so it just does this
+                if save == False:
+                        fileName = "tempOutput"
                 tmp = (self.fileLocation + fileName + ".wav")
                 print(tmp)
                 with open(join(dirname(__file__), tmp), 'wb') as audio_file:
@@ -134,10 +134,12 @@ class TextToSpeech:
                                 message,
                                 accept='audio/wav',
                                 voice="en-US_AllisonVoice"))
+                print(fileName)
                 self.play(fileName)
             #subprocess.call("exec aplay " + self.fileLocation, shell=True)
 
     def play(self, filename):
+        print(filename)
         responsePath = self.fileLocation + filename + ".wav"
         subprocess.call("exec aplay " + responsePath, shell=True)
 
