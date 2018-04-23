@@ -107,8 +107,9 @@ def main():
 
     activeTimeCheck = True # This boolean differentiates between inactivity for 60 or 120 seconds.
 
-    bioloid.doBow(False)
+    bioloid.doBow()
     tts.speak('Hello my name is ' + name + ' I am a total Bro')
+    bioloid.doWalkFront(2)
 
 
     while True:
@@ -120,6 +121,7 @@ def main():
         if all( [time.time() - lastActiveTime > timeoutShutdown, activeTimeCheck == False] ):
             tts.speak("Shutting down now.")
             call("sudo shutdown -h now", shell=True)
+
 
         """
         if(lastActiveTime - time.time() > 60): #if it is inactive for 1 min then it powers down.
