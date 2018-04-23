@@ -39,13 +39,14 @@ class VisualRecognition:
             #print(json.dumps(results))
             json.dumps(results, res)
         #iterate over the JSON file and find out how many are Object that are recognized.
-        
+
         print(res)
         print(results)
-        for obj in res[1][0][0]:
-            if obj[0] > .6:
-                seenObjects[i] = obj[1]
-                i += 1
+        for obj in results['images']['classifiers']:
+            print(obj)
+            #if obj[0] > .6:
+            #    seenObjects[i] = obj[1]
+            #    i += 1
 
         for sObj in seenObjects:
             if sObj.equals(seenObjects[i]):
