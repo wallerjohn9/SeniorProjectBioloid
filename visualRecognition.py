@@ -59,6 +59,7 @@ class VisualRecognition:
 
         print(whatToSay)
 
+        return whatToSay
 
 
     '''
