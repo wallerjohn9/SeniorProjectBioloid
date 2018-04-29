@@ -32,12 +32,19 @@ import visualRecognition as vis
 import errorHandler
 from subprocess import call
 import configparser
+import signal
 
+
+def sig_handler(signum, frame):
+    print("segFault")
 
 
 def main():
 
     # configuration block for IBM credentials
+    signal.signal(signal.SIGPIPE, sig_handler)
+    signal.signal(signal.SIGSEGV, sig_handler)
+
     led_obj = led.Led()
     ledP = ledProcess.LedProcess(led_obj)
 
@@ -135,6 +142,7 @@ def main():
             activeTimeCheck = False
 
         if all( [time.time() - lastActiveTime > timeoutShutdown, activeTimeCheck == False] ):
+            bioloid.doSit()
             tts.speak("Shutting down now.")
             call("sudo shutdown -h now", shell=True)
 
