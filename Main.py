@@ -164,13 +164,13 @@ def main():
             activeTimeCheck = True
             response = convo.sendMessage(phrase)
             if '~' in response:
-                processCommand(response)
+                processCommand(response, bioloid)
 
             tts.speak(response)
 
 
 
-def processCommand(response):
+def processCommand(response, bioloid):
     if '~UNKNOWN' in response:
         bioloid.doScratchHead(False)
     if '~INSULT' in response:
