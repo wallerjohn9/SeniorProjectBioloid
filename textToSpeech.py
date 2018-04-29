@@ -24,7 +24,7 @@ import pyaudio
 import os.path
 from os.path import join, dirname, isfile
 import subprocess
-
+import re
 
 class TextToSpeech:
 
@@ -42,9 +42,9 @@ class TextToSpeech:
     def speak(self, message, save=True):
         print(message)
         regex = re.compile('[^a-zA-Z]')
-        fileName = regex.sub('', fileName)
-        filename = filename[0:32]
-        fileName = message.replace(" ", "_")
+        fileName = regex.sub('', message)
+        fileName = fileName[0:32]
+        fileName = fileName.replace(" ", "_")
         fileName = fileName.replace("'", "")
         path = self.fileLocation + fileName + ".wav"
         print(path)

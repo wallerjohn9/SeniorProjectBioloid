@@ -38,13 +38,17 @@ class errorHandler:
     def fatalError(error):
         code = bin(error)
         code = list(str(code))
-        for(i = 0; i < 4; i++):
+        for i in range(0,4):
             led.green()
             time.sleep(1)
             for n in code:
                 if n == '1':
                     led.red()
+<<<<<<< HEAD
                 else if n=='0':
+=======
+                elif n == '0':
+>>>>>>> ce0afe901255f55f6d1d924fd0a3c52cb0982abc
                     led.customColor(0,0,0)
                 time.sleep(.5)
         call("sudo showdown -r now", shell=True)

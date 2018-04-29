@@ -107,13 +107,12 @@ def main():
     except:
         errorHandle.fatalError(6)
 
+    #bioloid.doLookUp()
 
-    bioloid.doLookUp()
-
-    say = vr.viewObjects()
-    tts.speak(say, False)
-    say = vr.viewFaces()
-    tts.speak(say, False)
+    #say = vr.viewObjects()
+    #tts.speak(say, False)
+    #say = vr.viewFaces()
+    #tts.speak(say, False)
 
     #bioloid.doIdle(False)
     # replace with robot name
@@ -123,9 +122,9 @@ def main():
 
     activeTimeCheck = True # This boolean differentiates between inactivity for 60 or 120 seconds.
 
-    bioloid.doBow()
-    tts.speak('Hello my name is ' + name + ' I am a total Bro')
-    bioloid.doWalkFront(2)
+    #bioloid.doBow()
+    tts.speak('Hello my name is ' + name + ' I am a big robot!')
+   # bioloid.doPushUp(2)
 
 
     while True:
@@ -150,6 +149,7 @@ def main():
             phrase = stt.get_phrase()
         except:
             errorHandle.error()
+            print(phrase)
         if (name in phrase) or (checkForName(homophones, phrase)):
             bioloid.doIdle(False)
             lastActiveTime = time.time() #if its name is heard then we can assume it is active
@@ -235,7 +235,10 @@ def processCommand(response):
     '''
 
 def checkForName(words, phrase):
+    #words = words.toLower()
+    phrase= phrase.lower()
     for w in words:
+        w=w.lower()
         if w in phrase:
             return True
     return False
