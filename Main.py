@@ -29,6 +29,7 @@ import time
 import movements
 import bioloid as bio
 import visualRecognition as vis
+import errorHandler
 from subprocess import call
 import configparser
 
@@ -37,19 +38,27 @@ import configparser
 def main():
 
     # configuration block for IBM credentials
-    config = configparser.ConfigParser()
-    config.read('/home/pi/SeniorProjectBioloid/config.cfg')
-    sttUser = config.get('Bioloid Credentials','sttUser')
-    sttPw = config.get('Bioloid Credentials','sttPassword')
-    ttsUser = config.get('Bioloid Credentials','ttsUser')
-    ttsPw = config.get('Bioloid Credentials','ttsPassword')
-    convoUser = config.get('Bioloid Credentials','convoUser')
-    convoPw = config.get('Bioloid Credentials','convoPassword')
-    convoWorkSpace = config.get('Bioloid Credentials','convoWorkSpace')
+    led_obj = led.Led()
+    ledP = ledProcess.LedProcess(led_obj)
 
-    # configuration for timeout options
-    timeoutWarning = float(config.get('Bioloid Information','timeoutWarning'))
-    timeoutShutdown = float(config.get('Bioloid Information','timeoutShutdown'))
+    errorHandle = errorHandler.errorHandler(ledP)
+    config = configparser.ConfigParser()
+    try:
+        config.read('/home/pi/SeniorProjectBioloid/config.cfg')
+        sttUser = config.get('Bioloid Credentials','sttUser')
+        sttPw = config.get('Bioloid Credentials','sttPassword')
+        ttsUser = config.get('Bioloid Credentials','ttsUser')
+        ttsPw = config.get('Bioloid Credentials','ttsPassword')
+        convoUser = config.get('Bioloid Credentials','convoUser')
+        convoPw = config.get('Bioloid Credentials','convoPassword')
+        convoWorkSpace = config.get('Bioloid Credentials','convoWorkSpace')
+        # configuration for timeout options
+        timeoutWarning = float(config.get('Bioloid Information','timeoutWarning'))
+        timeoutShutdown = float(config.get('Bioloid Information','timeoutShutdown'))
+        soundsLike = config.get('Bioloid Information', 'soundsLike')
+    except:
+        errorHandle.fatalError(1)
+    homophones = soundsLike.split(",")
 
     try:
         stt = streaming.StreamingSTT(
@@ -60,7 +69,7 @@ def main():
             # replace with speech to text credentials password
             sttPw)
     except:
-        fatalFailure()
+        errorHandle.fatalError(2)
 
     try:
         tts = textToSpeech.TextToSpeech(
@@ -71,7 +80,7 @@ def main():
             # replace with text to speech credentials password
             ttsPw)
     except:
-        fatalFailure()
+        errorHandle.fatalError(3)
 
 
     try:
@@ -86,12 +95,18 @@ def main():
             # replace with workspace ID.
             convoWorkSpace)
     except:
-        fatalFailure()
+        errorHandle.fatalError(4)
 
-    vr = vis.VisualRecognition()
+    try:
+        vr = vis.VisualRecognition()
+    except:
+        errorHandle.fatalError(5)
 
-    bioloid = bio.Bioloid()
-    time.sleep(3)
+    try:
+        bioloid = bio.Bioloid()
+    except:
+        errorHandle.fatalError(6)
+
     bioloid.doLookUp()
 
     say = vr.viewObjects()
@@ -129,7 +144,7 @@ def main():
             tts.speak("I have been inactive for 1 minute. After another minute, I will shut down")
         """
         phrase = stt.get_phrase()
-        if (name in phrase) or ('bunny'in phrase) or ('body' in phrase) or ('Bani' in phrase):
+        if (name in phrase) or (checkForName(homophones, phrase)):
             lastActiveTime = time.time() #if its name is heard then we can assume it is active
             activeTimeCheck = True
             response = convo.sendMessage(phrase)
@@ -138,12 +153,6 @@ def main():
 
             tts.speak(response)
 
-def fatalFailure():
-    while True:
-        ledP.red()
-        time.sleep(500)
-        ledP.customColor(0, 0, 0)
-        time.sleep(500)
 
 
 def processCommand(response):
@@ -218,7 +227,11 @@ def processCommand(response):
         response = 'akward silence'
     '''
 
-
-
+def checkForName(words, phrase):
+    for w in words:
+        if w in phrase:
+            return True
+    return False
+    
 if __name__ == "__main__":
     main()

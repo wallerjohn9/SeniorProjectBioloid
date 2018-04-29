@@ -200,7 +200,7 @@ class StreamingSTT:
             #if silence_chunks >= limit_chunks:
             #    break
 
-            data = stream.read(self.CHUNK)#, exception_on_overflow=False)
+            data = stream.read(self.CHUNK, exception_on_overflow=False)
             try:
                 ws.send(data, ABNF.OPCODE_BINARY)
             except:
