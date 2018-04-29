@@ -39,12 +39,12 @@ class errorHandler:
         code = bin(error)
         code = list(str(code))
         for i in range(0,4):
-            led.green()
+            self.led.green()
             time.sleep(1)
             for n in code:
                 if n == '1':
-                    led.red()
+                    self.led.red()
                 elif n == '0':
-                    led.customColor(0,0,0)
+                    self.led.customColor(0,0,0)
                 time.sleep(.5)
         call("sudo showdown -r now", shell=True)
