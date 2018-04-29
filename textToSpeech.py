@@ -35,7 +35,7 @@ class TextToSpeech:
             username=username,
             password=password,
             x_watson_learning_opt_out=True)
-        self.fileLocation = "/home/pi/tj-python-master/resources/"
+        self.fileLocation = "/home/pi/SeniorProjectBioloid/resources/"
 
 
 #beautiful Block of code
