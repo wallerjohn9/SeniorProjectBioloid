@@ -175,6 +175,8 @@ def processCommand(response, bioloid):
         bioloid.doScratchHead(False)
     if '~INSULT' in response:
         bioloid.doBeatChest(False)
+    if '~PUSH' in response:
+        bioloid.doPushUp(2)
     '''
     if '~RED' in response:
         ledP.red()
