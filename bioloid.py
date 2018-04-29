@@ -126,11 +126,13 @@ class Bioloid:
             self.listen.wait_to_stop()
 
     def doScratchHead(self, wait=True):
+        self.bioloid.start_sync()
         self.scratchHead.start()
         if wait:
             self.scratchHead.wait_to_stop()
 
     def doBeatChest(self, wait=True):
+        self.bioloid.start_sync()
         self.beatChest.start()
         if wait:
             self.beatChest.wait_to_stop()
