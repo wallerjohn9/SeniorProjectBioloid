@@ -155,9 +155,9 @@ def main():
         bioloid.doListen()
         try:
             phrase = stt.get_phrase()
+            print(phrase)
         except:
             errorHandle.error()
-            print(phrase)
         if (name in phrase) or (checkForName(homophones, phrase)):
             bioloid.doIdle(False)
             lastActiveTime = time.time() #if its name is heard then we can assume it is active
