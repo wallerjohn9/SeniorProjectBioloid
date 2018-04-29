@@ -169,7 +169,8 @@ def main():
                 print("The Response was blank")
             if '~' in response:
                 processCommand(response, bioloid)
-            bioloid.doIdle(False)
+            elif:
+                bioloid.doIdle(False)
 
 
             tts.speak(response)
