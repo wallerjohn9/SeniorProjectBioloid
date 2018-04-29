@@ -58,7 +58,7 @@ class StreamingSTT:
     # the actual websocket
     WS = None
 
-
+    isOpen = False
     '''
      Constructor.  Basically all you really need is StreamingSTT(<username>
      <password>)
@@ -226,8 +226,9 @@ class StreamingSTT:
         ws.send(json.dumps(data).encode('utf8'))
         time.sleep(1)
 
-        # close the websocket
-        ws.close()
+        # close the websockie
+        if self.isOpen:
+            ws.close()
         #p.terminate()
 
     '''
@@ -253,6 +254,7 @@ class StreamingSTT:
         ws.send(json.dumps(data).encode('utf8'))
 
         # start a thread to read audio.
+        self.isOpen=True
         threading.Thread(target=self.read_audio,
                          args=(ws, self.TIMEOUT)).start()
 
@@ -292,6 +294,8 @@ class StreamingSTT:
     # inform coder dude that websocket was closed
     def on_close(self, ws):
         logging.debug("Websocket closed.")
+        self.isOpen = False
+        
 
     '''
     # get_phrase should not be confused with read_audio.
@@ -370,6 +374,8 @@ if __name__ == "__main__":
         ws.send(json.dumps(data).encode('utf8'))
 
         # start a thread to read audio.
+
+        self.IsOpen = True
         threading.Thread(target=self.read_audio,
                          args=(ws, self.TIMEOUT)).start()
 
@@ -398,6 +404,7 @@ if __name__ == "__main__":
 
     # inform coder dude that websocket was closed
     def on_close(self, ws):
+        self.isOpen = False
         if __debug__:
             print("Websocket closed.")
 
