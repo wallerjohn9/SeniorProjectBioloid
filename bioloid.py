@@ -81,9 +81,11 @@ class Bioloid:
         self.pushUpStart.start()
         self.pushUpStart.wait_to_stop()
         while(count > 0):
+            self.bioloid.start_sync()
             self.pushUpMiddle.start()
             self.pushUpMiddle.wait_to_stop()
             count = count - 1
+        self.bioloid.start_sync()
         self.pushUpEnd.start()
         self.pushUpEnd.wait_to_stop()
 
