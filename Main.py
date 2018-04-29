@@ -145,11 +145,13 @@ def main():
             #Go home
             tts.speak("I have been inactive for 1 minute. After another minute, I will shut down")
         """
+        bioloid.doListen()
         try:
             phrase = stt.get_phrase()
         except:
             errorHandle.error()
         if (name in phrase) or (checkForName(homophones, phrase)):
+            bioloid.doIdle(False)
             lastActiveTime = time.time() #if its name is heard then we can assume it is active
             activeTimeCheck = True
             response = convo.sendMessage(phrase)
