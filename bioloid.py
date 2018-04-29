@@ -66,15 +66,18 @@ class Bioloid:
         self.idlePosition.wait_to_stop()
 
     def doIdle(self, wait=True):
+        self.bioloid.start_sync()
         self.idlePosition.start()
         if wait:
             self.idlePosition.wait_to_stop()
     def doBow(self, wait=True):
+        self.bioloid.start_sync()
         self.bow.start()
         if wait:
             self.bow.wait_to_stop()
 
     def doPushUp(self, count = 1):
+        self.bioloid.start_sync()
         self.pushUpStart.start()
         self.pushUpStart.wait_to_stop()
         while(count > 0):
@@ -85,6 +88,7 @@ class Bioloid:
         self.pushUpEnd.wait_to_stop()
 
     def doWalkFront(self, steps = 1):
+        self.bioloid.start_sync()
         if(self.rightStep):
             self.frontWalkStartR1.start()
             self.frontWalkStartR1.wait_to_stop()
@@ -121,6 +125,7 @@ class Bioloid:
         self.lookUp.wait_to_stop()
 
     def doListen(self, wait=True):
+        self.bioloid.start_sync()
         self.listen.start()
         if wait:
             self.listen.wait_to_stop()

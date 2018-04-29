@@ -37,7 +37,8 @@ import signal
 
 def sig_handler(signum, frame):
     print("segFault")
-
+    call("sudo ./home/pi/SeniorProjectBioloid/start.sh", shell = True)
+    #call("sudo shutdown -r now", shell=True)
 
 def main():
 
