@@ -144,7 +144,10 @@ def main():
             #Go home
             tts.speak("I have been inactive for 1 minute. After another minute, I will shut down")
         """
-        phrase = stt.get_phrase()
+        try:
+            phrase = stt.get_phrase()
+        except:
+            errorHandle.error()
         if (name in phrase) or (checkForName(homophones, phrase)):
             lastActiveTime = time.time() #if its name is heard then we can assume it is active
             activeTimeCheck = True
@@ -233,6 +236,6 @@ def checkForName(words, phrase):
         if w in phrase:
             return True
     return False
-    
+
 if __name__ == "__main__":
     main()
