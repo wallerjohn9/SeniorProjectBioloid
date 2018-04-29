@@ -53,6 +53,8 @@ class Bioloid:
         self.sit = primitives.sit(self.bioloid)
         self.lookUp = primitives.lookUp(self.bioloid)
         self.listen = primitives.listen(self.bioloid)
+        self.scratcHead = primitives.scratcHead(self.bioloid)
+        self.beatChest = primitives.beatChest(self.bioloid)
 
 
 
@@ -122,6 +124,16 @@ class Bioloid:
         self.listen.start()
         if wait:
             self.listen.wait_to_stop()
+
+    def doScratchHead(self, wait=True):
+        self.scratcHead.start()
+        if wait:
+            self.scratcHead.wait_to_stop()
+
+    def doBeatChest(self, wait=True):
+        self.beatChest.start()
+        if wait:
+            self.beatChest.wait_to_stop()
 
 
     def close(self):

@@ -14,7 +14,7 @@ with open("rawmovements.txt") as f:
 # you may also want to remove whitespace characters like `\n` at the end of each line
 i=0
 movements = {}
-moveName = 'listen'
+moveName = 'scratchHead'
 time = {}
 lastFrame = 0
 with open("primitives.py", 'a+') as c:

@@ -171,6 +171,10 @@ def main():
 
 
 def processCommand(response):
+    if '~UNKNOWN' in response:
+        bioloid.doScratchHead(False)
+    if '~INSULT' in response:
+        bioloid.doBeatChest(False)
     '''
     if '~RED' in response:
         ledP.red()

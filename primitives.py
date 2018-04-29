@@ -542,3 +542,35 @@ class listen(pypot.primitive.Primitive):
 
 	def run(self):
 		self.robot.goto_position(movements.listen0, movements.listenTimes['0'], 'dummy', True)
+
+##################################
+###########beatChest#########
+###################################
+
+class beatChest(pypot.primitive.Primitive):
+	def __init__(self, robot):
+		self.robot = robot
+		pypot.primitive.Primitive.__init__(self, robot)
+
+	def run(self):
+		self.robot.goto_position(movements.beatChest0, movements.beatChestTimes['0'], 'dummy', True)
+		self.robot.goto_position(movements.beatChest1, movements.beatChestTimes['1'], 'dummy', True)
+		self.robot.goto_position(movements.beatChest2, movements.beatChestTimes['2'], 'dummy', True)
+		self.robot.goto_position(movements.beatChest3, movements.beatChestTimes['3'], 'dummy', True)
+		self.robot.goto_position(movements.beatChest4, movements.beatChestTimes['4'], 'dummy', True)
+
+##################################
+###########scratchHead#########
+###################################
+
+class scratchHead(pypot.primitive.Primitive):
+	def __init__(self, robot):
+		self.robot = robot
+		pypot.primitive.Primitive.__init__(self, robot)
+
+	def run(self):
+		self.robot.goto_position(movements.scratchHead0, movements.scratchHeadTimes['0'], 'dummy', True)
+		self.robot.goto_position(movements.scratchHead1, movements.scratchHeadTimes['1'], 'dummy', True)
+		self.robot.goto_position(movements.scratchHead2, movements.scratchHeadTimes['2'], 'dummy', True)
+		self.robot.goto_position(movements.scratchHead3, movements.scratchHeadTimes['3'], 'dummy', True)
+		self.robot.goto_position(movements.scratchHead4, movements.scratchHeadTimes['4'], 'dummy', True)

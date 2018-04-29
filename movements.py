@@ -493,3 +493,24 @@ lookUpTimes = {"0": 1.5}
 ###################################
 listen0 = {"right_chest": -81.15, "left_chest": -0.09, "right_shoulder": -68.26, "left_shoulder": 85.34, "right_hand": -14.65, "left_hand": 9.56, "right_ab": -45.12, "left_ab": 45.12, "right_rear": -1.46, "left_rear": 1.17, "right_hip": -47.1, "left_hip": 47.1, "right_knee": -79.69, "left_knee": 79.39, "right_ankle": 39.55, "left_ankle": -39.84, "right_foot": -1.46, "left_foot": 1.17}
 listenTimes = {"0": 0.6015625}
+
+
+##################################
+###########beatChest#########
+###################################
+beatChest0 = {"right_chest": 11.72, "left_chest": -12.01, "right_shoulder": -25.78, "left_shoulder": 25.49, "right_hand": -103.42, "left_hand": 103.12, "right_ab": -46.58, "left_ab": 46.29, "right_rear": -1.17, "left_rear": 0.88, "right_hip": -24.9, "left_hip": 24.61, "right_knee": -67.38, "left_knee": 67.09, "right_ankle": 39.55, "left_ankle": -39.84, "right_foot": -1.17, "left_foot": 0.88}
+beatChest1 = {"right_chest": 11.72, "left_chest": -12.01, "right_shoulder": -107.52, "left_shoulder": 25.49, "right_hand": -103.71, "left_hand": 103.12, "right_ab": -46.58, "left_ab": 46.29, "right_rear": -1.17, "left_rear": 0.88, "right_hip": -24.9, "left_hip": 24.61, "right_knee": -67.38, "left_knee": 67.09, "right_ankle": 39.55, "left_ankle": -39.84, "right_foot": -1.17, "left_foot": 0.88}
+beatChest2 = {"right_chest": 11.72, "left_chest": -12.01, "right_shoulder": -25.78, "left_shoulder": 25.49, "right_hand": -103.42, "left_hand": 103.12, "right_ab": -46.58, "left_ab": 46.29, "right_rear": -1.17, "left_rear": 0.88, "right_hip": -24.9, "left_hip": 24.61, "right_knee": -67.38, "left_knee": 67.09, "right_ankle": 39.55, "left_ankle": -39.84, "right_foot": -1.17, "left_foot": 0.88}
+beatChest3 = {"right_chest": 11.72, "left_chest": -12.01, "right_shoulder": -25.78, "left_shoulder": 113.09, "right_hand": -103.42, "left_hand": 103.42, "right_ab": -46.58, "left_ab": 46.29, "right_rear": -1.17, "left_rear": 0.88, "right_hip": -24.9, "left_hip": 24.61, "right_knee": -67.38, "left_knee": 67.09, "right_ankle": 39.55, "left_ankle": -39.84, "right_foot": -1.17, "left_foot": 0.88}
+beatChest4 = {"right_chest": 11.72, "left_chest": -12.01, "right_shoulder": -25.78, "left_shoulder": 25.49, "right_hand": -103.42, "left_hand": 103.12, "right_ab": -46.58, "left_ab": 46.29, "right_rear": -1.17, "left_rear": 0.88, "right_hip": -24.9, "left_hip": 24.61, "right_knee": -67.38, "left_knee": 67.09, "right_ankle": 39.55, "left_ankle": -39.84, "right_foot": -1.17, "left_foot": 0.88}
+beatChestTimes = {"0": 1.4609375, "1": 0.390625, "2": 0.1953125, "3": 0.390625, "4": 0.1953125}
+
+##################################
+###########scratchHead#########
+###################################
+scratchHead0 = {"right_chest": 89.65, "left_chest": 80.86, "right_shoulder": -73.24, "left_shoulder": 67.97, "right_hand": -71.19, "left_hand": 14.36, "right_ab": -46.58, "left_ab": 46.29, "right_rear": -1.17, "left_rear": 0.88, "right_hip": -62.99, "left_hip": 62.7, "right_knee": -67.38, "left_knee": 67.09, "right_ankle": 24.9, "left_ankle": -25.2, "right_foot": -1.17, "left_foot": 0.88}
+scratchHead1 = {"right_chest": 85.25, "left_chest": 80.86, "right_shoulder": -53.61, "left_shoulder": 67.97, "right_hand": -103.71, "left_hand": 14.36, "right_ab": -46.58, "left_ab": 46.29, "right_rear": -1.17, "left_rear": 0.88, "right_hip": -62.99, "left_hip": 62.7, "right_knee": -67.38, "left_knee": 67.09, "right_ankle": 24.9, "left_ankle": -25.2, "right_foot": -1.17, "left_foot": 0.88}
+scratchHead2 = {"right_chest": 89.65, "left_chest": 80.86, "right_shoulder": -73.24, "left_shoulder": 67.97, "right_hand": -71.19, "left_hand": 14.36, "right_ab": -46.58, "left_ab": 46.29, "right_rear": -1.17, "left_rear": 0.88, "right_hip": -62.99, "left_hip": 62.7, "right_knee": -67.38, "left_knee": 67.09, "right_ankle": 24.9, "left_ankle": -25.2, "right_foot": -1.17, "left_foot": 0.88}
+scratchHead3 = {"right_chest": 85.25, "left_chest": 80.86, "right_shoulder": -53.61, "left_shoulder": 67.97, "right_hand": -103.71, "left_hand": 14.36, "right_ab": -46.58, "left_ab": 46.29, "right_rear": -1.17, "left_rear": 0.88, "right_hip": -62.99, "left_hip": 62.7, "right_knee": -67.38, "left_knee": 67.09, "right_ankle": 24.9, "left_ankle": -25.2, "right_foot": -1.17, "left_foot": 0.88}
+scratchHead4 = {"right_chest": -81.15, "left_chest": 80.86, "right_shoulder": -68.26, "left_shoulder": 67.97, "right_hand": -14.65, "left_hand": 14.36, "right_ab": -45.12, "left_ab": 45.12, "right_rear": -1.46, "left_rear": 1.17, "right_hip": -50.1, "left_hip": 49.8, "right_knee": -79.69, "left_knee": 79.39, "right_ankle": 39.55, "left_ankle": -39.84, "right_foot": -1.46, "left_foot": 1.17}
+scratchHeadTimes = {"0": 0.7, "1": 0.484375, "2": 0.484375, "3": 0.484375, "4": 0.7}
