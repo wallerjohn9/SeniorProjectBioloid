@@ -29,13 +29,13 @@ class errorHandler:
     def __init__(self, ledProcess):
         self.led = ledProcess
 
-    def erros():
+    def error(self):
         led.red()
-        errorCount += 1
+        errorCount++
         if errorCount > errorLimit:
             fatalError(15)
 
-    def fatalError(error):
+    def fatalError(self, error):
         code = bin(error)
         code = list(str(code))
         for i in range(0,4):
