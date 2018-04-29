@@ -29,6 +29,7 @@ import time
 import movements
 import bioloid as bio
 import visualRecognition as vis
+import errorHandler
 from subprocess import call
 import configparser
 
@@ -37,21 +38,26 @@ import configparser
 def main():
 
     # configuration block for IBM credentials
+    led_obj = led.Led()
+    ledP = ledProcess.LedProcess(led_obj)
+
+    errorHandle = errorHandler.errorHandler(ledP)
     config = configparser.ConfigParser()
-    config.read('/home/pi/SeniorProjectBioloid/config.cfg')
-    sttUser = config.get('Bioloid Credentials','sttUser')
-    sttPw = config.get('Bioloid Credentials','sttPassword')
-    ttsUser = config.get('Bioloid Credentials','ttsUser')
-    ttsPw = config.get('Bioloid Credentials','ttsPassword')
-    convoUser = config.get('Bioloid Credentials','convoUser')
-    convoPw = config.get('Bioloid Credentials','convoPassword')
-    convoWorkSpace = config.get('Bioloid Credentials','convoWorkSpace')
-
-
-    # configuration for timeout options
-    timeoutWarning = float(config.get('Bioloid Information','timeoutWarning'))
-    timeoutShutdown = float(config.get('Bioloid Information','timeoutShutdown'))
-    soundsLike = config.get('Bioloid Information', 'soundsLike')
+    try:
+        config.read('/home/pi/SeniorProjectBioloid/config.cfg')
+        sttUser = config.get('Bioloid Credentials','sttUser')
+        sttPw = config.get('Bioloid Credentials','sttPassword')
+        ttsUser = config.get('Bioloid Credentials','ttsUser')
+        ttsPw = config.get('Bioloid Credentials','ttsPassword')
+        convoUser = config.get('Bioloid Credentials','convoUser')
+        convoPw = config.get('Bioloid Credentials','convoPassword')
+        convoWorkSpace = config.get('Bioloid Credentials','convoWorkSpace')
+        # configuration for timeout options
+        timeoutWarning = float(config.get('Bioloid Information','timeoutWarning'))
+        timeoutShutdown = float(config.get('Bioloid Information','timeoutShutdown'))
+        soundsLike = config.get('Bioloid Information', 'soundsLike')
+    except:
+        errorHandle.fatalError(1)
     homophones = soundsLike.split(",")
 
     try:
@@ -63,7 +69,7 @@ def main():
             # replace with speech to text credentials password
             sttPw)
     except:
-        fatalFailure()
+        errorHandle.fatalError(2)
 
     try:
         tts = textToSpeech.TextToSpeech(
@@ -74,7 +80,7 @@ def main():
             # replace with text to speech credentials password
             ttsPw)
     except:
-        fatalFailure()
+        errorHandle.fatalError(3)
 
 
     try:
@@ -89,11 +95,18 @@ def main():
             # replace with workspace ID.
             convoWorkSpace)
     except:
-        fatalFailure()
+        errorHandle.fatalError(4)
 
-    vr = vis.VisualRecognition()
+    try:
+        vr = vis.VisualRecognition()
+    except:
+        errorHandle.fatalError(5)
 
-    bioloid = bio.Bioloid()
+    try:
+        bioloid = bio.Bioloid()
+    except:
+        errorHandle.fatalError(6)
+
 
     bioloid.doLookUp()
 
@@ -141,12 +154,6 @@ def main():
 
             tts.speak(response)
 
-def fatalFailure():
-    while True:
-        ledP.red()
-        time.sleep(500)
-        ledP.customColor(0, 0, 0)
-        time.sleep(500)
 
 
 def processCommand(response):
@@ -226,5 +233,6 @@ def checkForName(words, phrase):
         if w in phrase:
             return True
     return False
+    
 if __name__ == "__main__":
     main()
