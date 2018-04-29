@@ -184,6 +184,18 @@ def processCommand(response, bioloid):
         bioloid.doBeatChest(False)
     if '~PUSH' in response:
         bioloid.doPushUp(2)
+    if '~AGGRESSIVE' in response:
+        bioloid.doBeatChest(False)
+    if '~APOLOGETIC' in response:
+        bioloid.doBow(False)
+    if '~TIME' in response:
+        os.enviorn['TZ'] = 'US/Central'
+        time.tzset()
+        t = time.now()
+        t = time.strftime("%H:%M")
+        response = "The Time is currently" + t
+    if '~VR' in response:
+        response = vr.viewObjects()
     '''
     if '~RED' in response:
         ledP.red()

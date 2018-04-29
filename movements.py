@@ -503,7 +503,7 @@ beatChest1 = {"right_chest": 11.72, "left_chest": -12.01, "right_shoulder": -107
 beatChest2 = {"right_chest": 11.72, "left_chest": -12.01, "right_shoulder": -25.78, "left_shoulder": 25.49, "right_hand": -103.42, "left_hand": 103.12, "right_ab": -46.58, "left_ab": 46.29, "right_rear": -1.17, "left_rear": 0.88, "right_hip": -24.9, "left_hip": 24.61, "right_knee": -67.38, "left_knee": 67.09, "right_ankle": 39.55, "left_ankle": -39.84, "right_foot": -1.17, "left_foot": 0.88}
 beatChest3 = {"right_chest": 11.72, "left_chest": -12.01, "right_shoulder": -25.78, "left_shoulder": 113.09, "right_hand": -103.42, "left_hand": 103.42, "right_ab": -46.58, "left_ab": 46.29, "right_rear": -1.17, "left_rear": 0.88, "right_hip": -24.9, "left_hip": 24.61, "right_knee": -67.38, "left_knee": 67.09, "right_ankle": 39.55, "left_ankle": -39.84, "right_foot": -1.17, "left_foot": 0.88}
 beatChest4 = {"right_chest": 11.72, "left_chest": -12.01, "right_shoulder": -25.78, "left_shoulder": 25.49, "right_hand": -103.42, "left_hand": 103.12, "right_ab": -46.58, "left_ab": 46.29, "right_rear": -1.17, "left_rear": 0.88, "right_hip": -24.9, "left_hip": 24.61, "right_knee": -67.38, "left_knee": 67.09, "right_ankle": 39.55, "left_ankle": -39.84, "right_foot": -1.17, "left_foot": 0.88}
-beatChestTimes = {"0": 1.4609375, "1": 0.390625, "2": 0.1953125, "3": 0.390625, "4": 0.1953125}
+beatChestTimes = {"0": 1, "1": 0.390625, "2": 0.1953125, "3": 0.390625, "4": 0.1953125}
 
 ##################################
 ###########scratchHead#########
