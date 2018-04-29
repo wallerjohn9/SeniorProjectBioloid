@@ -31,7 +31,7 @@ class errorHandler:
 
     def error(self):
         led.red()
-        errorCount++
+        errorCount += 1
         if errorCount > errorLimit:
             fatalError(15)
 
