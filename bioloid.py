@@ -52,6 +52,7 @@ class Bioloid:
         self.frontWalkEndR1 = primitives.frontWalkEndR1(self.bioloid)
         self.sit = primitives.sit(self.bioloid)
         self.lookUp = primitives.lookUp(self.bioloid)
+        self.listen = primitives.listen(self.bioloid)
 
 
 
@@ -116,6 +117,12 @@ class Bioloid:
     def doLookUp(self):
         self.lookUp.start()
         self.lookUp.wait_to_stop()
+
+    def doListen(self, wait=True):
+        self.listen.start()
+        if wait:
+            self.listen.wait_to_stop()
+
 
     def close(self):
         self.bioloid.close()

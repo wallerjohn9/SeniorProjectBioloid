@@ -129,6 +129,7 @@ def main():
 
 
     while True:
+
         if all( [time.time() - lastActiveTime > timeoutWarning, activeTimeCheck == True] ):
             bioloid.doSit()
             tts.speak("I have been inactive for 1 minute. After another minute, I will shut down")
@@ -236,6 +237,8 @@ def checkForName(words, phrase):
         if w in phrase:
             return True
     return False
+
+
 
 if __name__ == "__main__":
     main()

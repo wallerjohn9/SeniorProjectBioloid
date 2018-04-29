@@ -486,3 +486,10 @@ sitTimes = {"0": 0.5859375}
 ###################################
 lookUp0 = {"right_chest": -36.89, "left_chest": 36.89, "right_shoulder": -68.26, "left_shoulder": 67.97, "right_hand": -14.65, "left_hand": 14.36, "right_ab": -45.12, "left_ab": 45.12, "right_rear": -1.46, "left_rear": 1.17, "right_hip": -19.22, "left_hip": 19.22, "right_knee": -73.24, "left_knee": 73.24, "right_ankle": 39.55, "left_ankle": -39.84, "right_foot": -1.46, "left_foot": 1.17}
 lookUpTimes = {"0": 1.5}
+
+
+##################################
+###########listen#########
+###################################
+listen0 = {"right_chest": -81.15, "left_chest": -0.09, "right_shoulder": -68.26, "left_shoulder": 85.34, "right_hand": -14.65, "left_hand": 9.56, "right_ab": -45.12, "left_ab": 45.12, "right_rear": -1.46, "left_rear": 1.17, "right_hip": -50.1, "left_hip": 49.8, "right_knee": -79.69, "left_knee": 79.39, "right_ankle": 39.55, "left_ankle": -39.84, "right_foot": -1.46, "left_foot": 1.17}
+listenTimes = {"0": 0.6015625}
