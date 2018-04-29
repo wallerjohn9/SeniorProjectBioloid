@@ -91,7 +91,7 @@ def main():
     vr = vis.VisualRecognition()
 
     bioloid = bio.Bioloid()
-
+    time.sleep(3)
     bioloid.doLookUp()
 
     say = vr.viewObjects()
@@ -108,8 +108,8 @@ def main():
     activeTimeCheck = True # This boolean differentiates between inactivity for 60 or 120 seconds.
 
     bioloid.doBow()
-    tts.speak('Hello my name is ' + name + ' I am a total Bro')
-    bioloid.doWalkFront(2)
+    tts.speak('Hello my name is ' + name + ' I am a big robot!')
+    bioloid.doPushUp(2)
 
 
     while True:
