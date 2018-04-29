@@ -47,9 +47,12 @@ def main():
     convoPw = config.get('Bioloid Credentials','convoPassword')
     convoWorkSpace = config.get('Bioloid Credentials','convoWorkSpace')
 
+
     # configuration for timeout options
     timeoutWarning = float(config.get('Bioloid Information','timeoutWarning'))
     timeoutShutdown = float(config.get('Bioloid Information','timeoutShutdown'))
+    soundsLike = config.get('Bioloid Information', 'soundsLike')
+    homophones = soundsLike.split(",")
 
     try:
         stt = streaming.StreamingSTT(
@@ -129,7 +132,7 @@ def main():
             tts.speak("I have been inactive for 1 minute. After another minute, I will shut down")
         """
         phrase = stt.get_phrase()
-        if (name in phrase) or ('bunny'in phrase) or ('body' in phrase) or ('Bani' in phrase):
+        if (name in phrase) or (checkForName(homophones, phrase)):
             lastActiveTime = time.time() #if its name is heard then we can assume it is active
             activeTimeCheck = True
             response = convo.sendMessage(phrase)
@@ -218,7 +221,10 @@ def processCommand(response):
         response = 'akward silence'
     '''
 
-
-
+def checkForName(words, phrase):
+    for w in words:
+        if w in phrase:
+            return True
+    return False
 if __name__ == "__main__":
     main()
