@@ -163,9 +163,13 @@ def main():
             bioloid.doIdle(False)
             lastActiveTime = time.time() #if its name is heard then we can assume it is active
             activeTimeCheck = True
-            response = convo.sendMessage(phrase)
+            try:
+                response = convo.sendMessage(phrase)
+            except:
+                print("The Response was blank")
             if '~' in response:
                 processCommand(response, bioloid)
+
 
             tts.speak(response)
 
