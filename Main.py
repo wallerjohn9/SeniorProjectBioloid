@@ -160,7 +160,7 @@ def main():
         except:
             errorHandle.error()
         if (name in phrase) or (checkForName(homophones, phrase)):
-            bioloid.doIdle(False)
+
             lastActiveTime = time.time() #if its name is heard then we can assume it is active
             activeTimeCheck = True
             try:
@@ -169,6 +169,7 @@ def main():
                 print("The Response was blank")
             if '~' in response:
                 processCommand(response, bioloid)
+            bioloid.doIdle(False)
 
 
             tts.speak(response)
