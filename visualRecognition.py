@@ -114,7 +114,7 @@ class VisualRecognition:
         Will check and see if there is motion.
         Stays in this while loop until there is motion and then returns true
         Credit to adrian@pyimagesearch.com for this code
-    ''
+    '''
     def motionDetection(self):
         camera = cv2.VideoCapture(0)
         time.sleep(0.25)
@@ -156,8 +156,8 @@ class VisualRecognition:
     	for c in cnts:
     		# if the contour is too small, ignore it
     		if cv2.contourArea(c) < args["min_area"]:
-    			continue
-
+    			return True
+        '''
     		# compute the bounding box for the contour, draw it on the frame,
     		# and update the text
     		(x, y, w, h) = cv2.boundingRect(c)

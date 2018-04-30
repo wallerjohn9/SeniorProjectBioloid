@@ -1,3 +1,11 @@
+'''
+	@Author Cody Black
+			Brian McGinnis
+
+	primitives .py takes the movements that are added to the movements.py file
+	and allows the creation of primitives for them. This means that 
+'''
+
 import time
 import pypot.primitive
 import movements

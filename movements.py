@@ -1,3 +1,10 @@
+'''
+@Author Cody Black and Brian McGinnis
+This file contains dictionaries for all of the movemts of the Biolid and the
+angles of the motors that are required. It also contains the time for each of
+the positions will take to complete. 
+'''
+
 ################################################################################
 startPosDict = {
 		'right_chest': -81.15,

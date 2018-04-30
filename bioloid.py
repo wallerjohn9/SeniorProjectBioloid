@@ -1,7 +1,19 @@
 '''
 Created on Jan 21, 2018
 
-@author: codyblack
+@author: Cody Black and Brian McGinnis
+
+This Class is resposnible for the creation and handling the robot Object
+created using pypot
+
+It also contains the movements functions that can be called to enable movements for
+the bioloid
+Each of these functions are prefaced with do and then followed by the name of
+the action
+Some of these movements allow a boolen value to be passed to them. This allows
+the movement to operate in a new thread and other processes to exist at the same
+time. Be careful of this as if two movements try and operate at the same time
+There will be errors that crash the program. 
 '''
 import time
 import movements

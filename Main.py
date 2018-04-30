@@ -42,15 +42,20 @@ def sig_handler(signum, frame):
 
 def main():
 
-    # configuration block for IBM credentials
+    #Attempts at handling segementation faults and pipe faults
     signal.signal(signal.SIGPIPE, sig_handler)
     signal.signal(signal.SIGSEGV, sig_handler)
 
+    #Creation of the LED object and Process
     led_obj = led.Led()
     ledP = ledProcess.LedProcess(led_obj)
 
+    #Creation of the error handler and it passed the LED process so it can refrence it
     errorHandle = errorHandler.errorHandler(ledP)
     config = configparser.ConfigParser()
+
+    #This pulls in all of the credentials from the config files
+    #If one of these fails to pull in a fatal error is called
     try:
         config.read('/home/pi/SeniorProjectBioloid/config.cfg')
         sttUser = config.get('Bioloid Credentials','sttUser')
@@ -68,48 +73,37 @@ def main():
         errorHandle.fatalError(1)
     homophones = soundsLike.split(",")
 
+    #Start Creating the Watson servicesself.
+    #If one of them fails then it gives an erro
+    #the credentials can be changed in the config file
     try:
         stt = streaming.StreamingSTT(
-
-            # replace with speech to text credentials username
             sttUser,
-
-            # replace with speech to text credentials password
             sttPw)
     except:
         errorHandle.fatalError(2)
 
     try:
         tts = textToSpeech.TextToSpeech(
-
-            # replace with text to speech credentials username
             ttsUser,
-
-            # replace with text to speech credentials password
             ttsPw)
     except:
         errorHandle.fatalError(3)
 
-
     try:
         convo = conversation.Conversation(
-
-            # replace with conversation credentials username
             convoUser,
-
-            # replace with conversation credentials password
             convoPw,
-
-            # replace with workspace ID.
             convoWorkSpace)
     except:
         errorHandle.fatalError(4)
 
+    #Starts up the Visual recogniton abilites.
     try:
         vr = vis.VisualRecognition()
     except:
         errorHandle.fatalError(5)
-
+    #Creates the bioloid so we cna control the motors
     try:
         bioloid = bio.Bioloid()
     except:
@@ -123,14 +117,16 @@ def main():
     #tts.speak(say, False)
 
     #bioloid.doIdle(False)
-    # replace with robot name
+    #Gets the name of the robot from the Config File
     name = config.get('Bioloid Information','name')
 
+    #This allows to see if the robot has been inactive
     lastActiveTime = time.time()
 
     activeTimeCheck = True # This boolean differentiates between inactivity for 60 or 120 seconds.
 
     #bioloid.doBow()
+    #Kind of a hello works to know TTS is working.
     tts.speak('Hello my name is ' + name + ' I am a big robot!')
    # bioloid.doPushUp(2)
 

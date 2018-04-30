@@ -3,6 +3,12 @@ Created on Jan 21, 2018
 
 @author: codyblack
             Brian McGinnis
+
+            This code is mostly deprecated and its only use at this point is to
+            store the dictionary of the Bioloid robot. Most of the orginal
+            functions of this class have been moved to bioloid.py and this
+            class should probably be deleted and the dictionary moved to a new
+            file
 '''
 import pypot.robot
 from time import sleep
@@ -20,145 +26,7 @@ class Bot:
     def __init__(self):
 
         self.robot = pypot.robot.from_config(bot_config, True, False)
-        #self.robot.start_sync()
-        #print(robot.motors)
-        #self.robot.compliant = False
-        #self.robot.goto_position({'left_hand': -90, 'right_hand': 90}, 1, 'minjerk', True)
-        #sleep(5)
-        #self.robot.goto_position({'left_hand': 90, 'right_hand': -90}, 1, 'dummy', False)
-        #self.robot.close()
-        '''for m in self.robot.arms:
-            #m.compliant = False
-            m.goal_position = 90
-            sleep(.02) '''
-        #sleep(2)
-        #self.robot.stop_sync()
-        #self.robot.close()
-        """self.robot.compliant= False
-        self.robot.goto_position({'left_hand': 90, 'right_hand': -90}, .25, None, False)
-        sleep(10)
-        self.robot.close()"""
 
-        """move_recorder = MoveRecorder(self.robot, 50, self.robot.arms)
-        self.robot.compliant = True;
-        print("start")
-        move_recorder.start()
-        sleep(5)
-        move_recorder.stop()
-
-        with open('fuck.move','w') as f:
-            move_recorder.move.save(f)
-            print('saved')
-
-        sleep(2)
-
-        with open('fuck.move') as f:
-            mov = Move.load(f)
-
-        self.robot.compliant = False;
-
-        move_player = MovePlayer(self.robot, mov)
-        move_player.start()
-
-        sleep(5)
-    """
-        '''
-        for m in self.robot.motors:
-            #print(m.present_position)
-            m.compliant = False
-            m.goal_position = 0.0
-
-            print(m.id)
-            print(m.goal_position)
-            print(m.present_position)
-            #time.sleep(1)
-
-            #print('shitklfsd')
-
-        for m in self.robot.legs:
-            m.compliant = False
-            m.goal_position = 0.0
-            print(m.id)
-        for m in self.robot.arms:
-            m.compliant = False
-            m.goal_position = 0.0
-            #print(m.present_position)
-        time.sleep(1)
-        for i in range(0,10):
-            self.robot.left_ab.compliant = False
-            self.robot.right_ab.compliant = False
-            self.robot.left_ab.goal_position = -10.0
-            self.robot.right_ab.goal_position = -10.0
-            for m in self.robot.arms:
-                m.compliant
-                pos = (i*10)
-                m.goal_position = pos
-            for m in self.robot.legs:
-                m.compliant = False
-                m.goal_position = 0.0
-                #print(m.id)
-                #print(m.present_position)
-                #time.sleep(1)
-            time.sleep(.25)
-            self.robot.left_ab.compliant = False
-            self.robot.right_ab.compliant = False
-            self.robot.left_ab.goal_position = 10.0
-            self.robot.right_ab.goal_position = 10.0
-            time.sleep(.25)
-
-        for i in range(10,0):
-            self.robot.left_ab.compliant = False
-            self.robot.right_ab.compliant = False
-            self.robot.left_ab.goal_position = -10.0
-            self.robot.right_ab.goal_position = -10.0
-            for m in self.robot.arms:
-                m.compliant
-                pos = (i*10)
-                m.goal_position = pos
-            for m in self.robot.legs:
-                m.compliant = False
-                m.goal_position = 0.0
-                #print(m.id)
-                #print(m.present_position)
-                #time.sleep(1)
-            time.sleep(.25)
-            self.robot.left_ab.compliant = False
-            self.robot.right_ab.compliant = False
-            self.robot.left_ab.goal_position = 10.0
-            self.robot.right_ab.goal_position = 10.0
-            time.sleep(.25)
-        self.robot.close()
-
-    def move(self,motors,positions):
-        pass
-        motors is an array of motors for desired movement.
-           positions is an array of desired angles to be matched with each motor.
-
-        posIndex = 0
-
-        if len(motors) != len(positions):
-            raise Exception('Need a position angle for each motor')
-        for m in motors:
-            #print("moving motor " + m + " to " +positions[posIndex]+ " degrees.")
-            if m == 'left_hand':
-                print(self.robot.left_hand.present_position)
-                self.robot.compliant = False
-                self.robot.left_hand.goal_position = positions[posIndex]
-                print(self.robot.left_hand.goal_position)
-                print(self.robot.left_hand.present_position)
-                sleep(.1)
-            elif m == 'right_hand':
-                print(self.robot.right_hand.present_position)
-                self.robot.compliant = False
-                self.robot.right_hand.goal_position = positions[posIndex]
-                print(self.robot.right_hand.goal_position)
-                print(self.robot.right_hand.present_position)
-                sleep(.1)
-
-            posIndex+=1
-        sleep(.25)
-        self.robot.close()
-        '''
     def moveBot(self,frameList):
         #lastFrame = 0
         #timeToWait = 0

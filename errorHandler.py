@@ -29,12 +29,25 @@ class errorHandler:
     def __init__(self, ledProcess):
         self.led = ledProcess
 
+    '''
+        This function gets a error and increments the error count. when it gets an
+        error it turns the LED red and increments the error count. d
+        in the event there have been a large number of errors a fatal error will
+        be triggered.
+    '''
     def error(self):
         led.red()
         errorCount += 1
         if errorCount > errorLimit:
             fatalError(15)
-
+    '''
+        this function handles the events when a un recoverable error occurs
+        and the Bioloid needs to reboot itsself in order to continue. A Number
+        is passed to the function and this number is coneverted to binary. then
+        its binary representation is changed to a char list that is iterated over..
+        4 times and displayed using the RED status LED On the Bioloidself. after
+        it has iterated the system will restart. 
+    '''
     def fatalError(self, error):
         code = bin(error)
         code = list(str(code))
