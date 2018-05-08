@@ -164,8 +164,8 @@ def main():
             except:
                 print("The Response was blank")
             if '~' in response:
-                processCommand(response, bioloid)
-            elif:
+                response = processCommand(response, bioloid)
+            else:
                 bioloid.doIdle(False)
 
 
@@ -192,6 +192,7 @@ def processCommand(response, bioloid):
         response = "The Time is currently" + t
     if '~VR' in response:
         response = vr.viewObjects()
+    return response
     '''
     if '~RED' in response:
         ledP.red()
