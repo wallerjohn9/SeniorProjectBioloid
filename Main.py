@@ -140,8 +140,8 @@ def main():
 
         if all( [time.time() - lastActiveTime > timeoutShutdown, activeTimeCheck == False] ):
             bioloid.doSit()
-            tts.speak("Shutting down now.")
-            call("sudo shutdown -h now", shell=True)
+            tts.speak("Shutting down now. Just kidding. I am infinite.")
+            #call("sudo shutdown -h now", shell=True)
 
 
         """
