@@ -70,8 +70,8 @@ class Bioloid:
 
 
 
-        #idlePosition.start()
-        #idlePosition.wait_to_stop()
+        idlePosition.start()
+        idlePosition.wait_to_stop()
         self.bioloid.compliant = True
         self.bioloid.compliant = False #this tells the motors to get stiff
         self.idlePosition.start()

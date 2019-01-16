@@ -34,7 +34,8 @@ class TextToSpeech:
         self.text_to_speech = TextToSpeechV1(
             username=username,
             password=password,
-            x_watson_learning_opt_out=True)
+            url='https://stream.watsonplatform.net/text-to-speech/api')
+            #x_watson_learning_opt_out=True)
         self.fileLocation = "/home/pi/SeniorProjectBioloid/resources/"
 
 

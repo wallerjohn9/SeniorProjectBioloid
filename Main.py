@@ -28,7 +28,7 @@ import RPi.GPIO as GPIO
 import time
 import movements
 import bioloid as bio
-import visualRecognition as vis
+#import visualRecognition as vis
 import errorHandler
 from subprocess import call
 import configparser
@@ -47,11 +47,11 @@ def main():
     signal.signal(signal.SIGSEGV, sig_handler)
 
     #Creation of the LED object and Process
-    led_obj = led.Led()
-    ledP = ledProcess.LedProcess(led_obj)
+    #led_obj = led.Led()
+    #ledP = ledProcess.LedProcess(led_obj)
 
-    #Creation of the error handler and it passed the LED process so it can refrence it
-    errorHandle = errorHandler.errorHandler(ledP)
+    #Creation of the error handler and it passed the LED process so it can reference it
+    #errorHandle = errorHandler.errorHandler(ledP)
     config = configparser.ConfigParser()
 
     #This pulls in all of the credentials from the config files
@@ -81,17 +81,19 @@ def main():
             sttUser,
             sttPw)
     except:
-        errorHandle.fatalError(2)
+        print("error 2")
+        #errorHandle.fatalError(2)
 
     try:
+        print("Attempted to login to TTS")
         tts = textToSpeech.TextToSpeech(
             ttsUser,
             ttsPw)
     except:
-        errorHandle.fatalError(3)
-
+        #errorHandle.fatalError(3)
+        print("error 3")
     try:
-        convo = conversation.Conversation(
+        convo = conversation.Assistant(
             convoUser,
             convoPw,
             convoWorkSpace)
@@ -99,15 +101,16 @@ def main():
         errorHandle.fatalError(4)
 
     #Starts up the Visual recogniton abilites.
-    try:
-        vr = vis.VisualRecognition()
-    except:
-        errorHandle.fatalError(5)
+#    try:
+#        vr = vis.VisualRecognition()
+#    except:
+#        errorHandle.fatalError(5)
     #Creates the bioloid so we cna control the motors
     try:
         bioloid = bio.Bioloid()
     except:
-        errorHandle.fatalError(6)
+        print("error6")
+#        errorHandle.fatalError(6)
 
     #bioloid.doLookUp()
 
@@ -125,13 +128,12 @@ def main():
 
     activeTimeCheck = True # This boolean differentiates between inactivity for 60 or 120 seconds.
 
-    #bioloid.doBow()
+#    bioloid.doBow()
     #Kind of a hello works to know TTS is working.
     tts.speak('Hello my name is ' + name + ' I am a big robot!')
    # bioloid.doPushUp(2)
-
-
-    while True:
+    i=0
+    while i!=1:
 
         if all( [time.time() - lastActiveTime > timeoutWarning, activeTimeCheck == True] ):
             bioloid.doSit()
@@ -140,8 +142,8 @@ def main():
 
         if all( [time.time() - lastActiveTime > timeoutShutdown, activeTimeCheck == False] ):
             bioloid.doSit()
-            tts.speak("Shutting down now. Just kidding. I am infinite.")
-            #call("sudo shutdown -h now", shell=True)
+            tts.speak("Shutting down now.")
+            call("sudo shutdown -h now", shell=True)
 
 
         """
@@ -149,24 +151,29 @@ def main():
             #Go home
             tts.speak("I have been inactive for 1 minute. After another minute, I will shut down")
         """
-        bioloid.doListen()
+        #bioloid.doListen()
+        i=1
         try:
             phrase = stt.get_phrase()
             print(phrase)
-        except:
-            errorHandle.error()
-        if (name in phrase) or (checkForName(homophones, phrase)):
-
-            lastActiveTime = time.time() #if its name is heard then we can assume it is active
-            activeTimeCheck = True
             try:
                 response = convo.sendMessage(phrase)
             except:
                 print("The Response was blank")
-            if '~' in response:
-                response = processCommand(response, bioloid)
-            else:
-                bioloid.doIdle(False)
+        except:
+            errorHandle.fatalError(1)
+        if (name in phrase) or (checkForName(homophones, phrase)):
+
+            lastActiveTime = time.time() #if its name is heard then we can assume it is active
+            activeTimeCheck = True
+            #try:
+            #    response = convo.sendMessage(phrase)
+            #except:
+            #    print("The Response was blank")
+            #if '~' in response:
+            #    response = processCommand(response, bioloid)
+            #else:
+            #    bioloid.doIdle(False)
 
 
             tts.speak(response)

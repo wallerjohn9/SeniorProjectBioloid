@@ -311,18 +311,20 @@ class StreamingSTT:
         self.FINALRESPONSE = False
 
         # connect up the websocket
+        print("0")
         headers = {}
         headers["Authorization"] = "Basic " + base64.b64encode(
             self.userpass.encode()).decode()
-        url = ("wss://stream.watsonplatform.net//speech-to-text/api/v1/recognize"
+        url = ("wss://stream.watsonplatform.net/speech-to-text/api/v1/recognize"
                "?model=en-US_BroadbandModel")
+        print("1")
         self.WS = websocket.WebSocketApp(url,
                                          header=headers,
                                          on_message=self.on_message,
                                          on_error=self.on_error,
                                          on_close=self.on_close)
         self.WS.on_open = self.on_open
-
+        print("2")
         # run the websocket
         self.WS.run_forever(
             sslopt={
@@ -331,7 +333,7 @@ class StreamingSTT:
                 "ssl_version": ssl.PROTOCOL_TLSv1_2
             }
         )
-
+        print("3")
         # return the parsed result
         return "".join([i['results'][0]['alternatives'][0]
                         ['transcript'] for i in self.FINAL])
